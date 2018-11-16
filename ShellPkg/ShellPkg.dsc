@@ -118,6 +118,7 @@
       NULL|ShellPkg/Library/UefiShellTestCommandsLib/UefiShellTestCommandsLib.inf
 !endif #$(NO_SHELL_PROFILES)
   }
+  ShellPkg/Application/ShellHelloApp/ShellHelloApp.inf
 
   #
   # Build a second version of the shell with all commands integrated
