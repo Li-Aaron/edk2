@@ -69,6 +69,12 @@
     0x5f5f605d, 0x1583, 0x4a2d, {0xa6, 0xb2, 0xeb, 0x12, 0xda, 0xb4, 0xa2, 0xb6 } \
   }
 
+#define SHELL_TEST_HII_GUID \
+  { \
+    0x6b6941aa, 0xa0d7, 0x4780, {0xbf, 0xf8, 0x67, 0x60, 0xce, 0xea, 0xef, 0x30 } \
+  }               
+
+
 extern EFI_GUID gHandleParsingHiiGuid;
 extern EFI_GUID gShellDebug1HiiGuid;
 extern EFI_GUID gShellDriver1HiiGuid;
@@ -81,5 +87,6 @@ extern EFI_GUID gShellNetwork2HiiGuid;
 extern EFI_GUID gShellTftpHiiGuid;
 extern EFI_GUID gShellHttpHiiGuid;
 extern EFI_GUID gShellBcfgHiiGuid;
+extern EFI_GUID gShellTestHiiGuid;
 
 #endif
