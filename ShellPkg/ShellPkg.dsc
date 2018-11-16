@@ -122,6 +122,7 @@
       NULL|ShellPkg/Library/UefiShellTestCommandsLib/UefiShellTestCommandsLib.inf
 !endif #$(NO_SHELL_PROFILES)
   }
+  ShellPkg/Application/ShellHelloApp/ShellHelloApp.inf
 
   ShellPkg/DynamicCommand/TftpDynamicCommand/TftpDynamicCommand.inf {
     <PcdsFixedAtBuild>
