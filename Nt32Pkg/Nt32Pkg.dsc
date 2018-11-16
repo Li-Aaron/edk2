@@ -59,7 +59,7 @@
   #       feature, please follow the instructions found in the file "Patch-HOWTO.txt" 
   #       located in CryptoPkg\Library\OpensslLib to enable the OpenSSL building first.
   #
-  DEFINE TLS_ENABLE = FALSE
+  DEFINE TLS_ENABLE = TRUE
   
   #
   # Indicates whether HTTP connections (i.e., unsecured) are permitted or not.
@@ -76,7 +76,7 @@
   # These can be changed on the command line.
   # -D FLAG=VALUE
   #
-  DEFINE NETWORK_IP6_ENABLE = FALSE
+  DEFINE NETWORK_IP6_ENABLE = TRUE
 
 ################################################################################
 #
@@ -170,6 +170,7 @@
   ResetSystemLib|Nt32Pkg/Library/ResetSystemLib/ResetSystemLib.inf
 !if $(TLS_ENABLE) == TRUE
   OpensslLib|CryptoPkg/Library/OpensslLib/OpensslLib.inf
+  SafeIntLib|MdePkg/Library/BaseSafeIntLib/BaseSafeIntLib.inf
 !else
   OpensslLib|CryptoPkg/Library/OpensslLib/OpensslLibCrypto.inf
 !endif
@@ -547,7 +548,7 @@
   DEBUG_*_*_DLINK_FLAGS = /EXPORT:InitializeDriver=$(IMAGE_ENTRY_POINT) /BASE:0x10000 /ALIGN:4096 /FILEALIGN:4096 /SUBSYSTEM:CONSOLE
   NOOPT_*_*_DLINK_FLAGS = /EXPORT:InitializeDriver=$(IMAGE_ENTRY_POINT) /BASE:0x10000 /ALIGN:4096 /FILEALIGN:4096 /SUBSYSTEM:CONSOLE
   RELEASE_*_*_DLINK_FLAGS = /ALIGN:4096 /FILEALIGN:4096
-
+  DEBUG_*_*_CC_FLAGS = /Od /GL-
 #############################################################################################################
 # NOTE:
 # The following [Libraries] section is for building EDK module under the EDKII tool chain.
