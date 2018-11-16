@@ -534,6 +534,7 @@
       BcfgCommandLib|ShellPkg/Library/UefiShellBcfgCommandLib/UefiShellBcfgCommandLib.inf
       FileHandleLib|MdePkg/Library/UefiFileHandleLib/UefiFileHandleLib.inf
   }
+  MdeModulePkg/Application/HelloApp/HelloApp.inf
 
 ###################################################################################################
 #
