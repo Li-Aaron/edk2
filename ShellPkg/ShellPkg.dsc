@@ -104,6 +104,7 @@
   ShellPkg/Library/UefiShellDebug1CommandsLib/UefiShellDebug1CommandsLib.inf
   ShellPkg/Library/UefiShellNetwork1CommandsLib/UefiShellNetwork1CommandsLib.inf
   ShellPkg/Library/UefiShellNetwork2CommandsLib/UefiShellNetwork2CommandsLib.inf
+  ShellPkg/Library/UefiShellTestCommandsLib/UefiShellTestCommandsLib.inf
 
   ShellPkg/Application/Shell/Shell.inf {
     <PcdsFixedAtBuild>
@@ -118,6 +119,7 @@
       NULL|ShellPkg/Library/UefiShellDebug1CommandsLib/UefiShellDebug1CommandsLib.inf
       NULL|ShellPkg/Library/UefiShellNetwork1CommandsLib/UefiShellNetwork1CommandsLib.inf
       NULL|ShellPkg/Library/UefiShellNetwork2CommandsLib/UefiShellNetwork2CommandsLib.inf
+      NULL|ShellPkg/Library/UefiShellTestCommandsLib/UefiShellTestCommandsLib.inf
 !endif #$(NO_SHELL_PROFILES)
   }
 
