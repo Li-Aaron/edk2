@@ -1,0 +1,49 @@
+##  @file
+#   Library used for sorting routines.
+#
+#  Copyright (c) 2009 - 2018, Intel Corporation. All rights reserved.<BR>
+#
+#  This program and the accompanying materials
+#  are licensed and made available under the terms and conditions of the BSD License
+#  which accompanies this distribution. The full text of the license may be found at
+#  http://opensource.org/licenses/bsd-license.php
+#  THE PROGRAM IS DISTRIBUTED UNDER THE BSD LICENSE ON AN "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
+#
+#
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010006
+  BASE_NAME                      = BaseSortCmpLib
+  FILE_GUID                      = da1b1707-1b9a-4699-850c-2d40ae43a925
+  MODULE_TYPE                    = UEFI_DRIVER
+  VERSION_STRING                 = 1.0
+  LIBRARY_CLASS                  = SortCmpLib|UEFI_APPLICATION
+
+#
+#  VALID_ARCHITECTURES           = IA32 X64 EBC
+#
+
+[Sources.common]
+  BaseSortCmpLib.h
+  BaseSortCmpLib.c
+  sort_c/Inc/sort.h
+  sort_c/Src/sort_bubble.c
+  sort_c/Src/sort_cmp.c
+  sort_c/Src/sort_heap.c
+  sort_c/Src/sort_insert.c
+  sort_c/Src/sort_merge.c
+  sort_c/Src/sort_quick.c
+  sort_c/Src/sort_select.c
+  sort_c/Src/sort_shell.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+
+[LibraryClasses]
+  MemoryAllocationLib
+  BaseLib
+  BaseMemoryLib
+  DebugLib
