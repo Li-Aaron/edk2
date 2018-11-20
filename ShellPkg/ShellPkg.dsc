@@ -47,6 +47,7 @@
   UefiHiiServicesLib|MdeModulePkg/Library/UefiHiiServicesLib/UefiHiiServicesLib.inf
   HiiLib|MdeModulePkg/Library/UefiHiiLib/UefiHiiLib.inf
   NetLib|MdeModulePkg/Library/DxeNetLib/DxeNetLib.inf
+  SortCmpLib|MdeModulePkg/Library/BaseSortCmpLib/BaseSortCmpLib.inf
 
   ShellLib|ShellPkg/Library/UefiShellLib/UefiShellLib.inf
   ShellCommandLib|ShellPkg/Library/UefiShellCommandLib/UefiShellCommandLib.inf
@@ -122,7 +123,9 @@
       NULL|ShellPkg/Library/UefiShellTestCommandsLib/UefiShellTestCommandsLib.inf
 !endif #$(NO_SHELL_PROFILES)
   }
+  # Self Added
   ShellPkg/Application/ShellHelloApp/ShellHelloApp.inf
+  ShellPkg/Application/ShellSortCmpTestApp/ShellSortCmpTestApp.inf
 
   ShellPkg/DynamicCommand/TftpDynamicCommand/TftpDynamicCommand.inf {
     <PcdsFixedAtBuild>
