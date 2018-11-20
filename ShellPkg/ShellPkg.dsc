@@ -44,6 +44,7 @@
   UefiHiiServicesLib|MdeModulePkg/Library/UefiHiiServicesLib/UefiHiiServicesLib.inf
   HiiLib|MdeModulePkg/Library/UefiHiiLib/UefiHiiLib.inf
   !include NetworkPkg/NetworkLibs.dsc.inc
+  SortCmpLib|MdeModulePkg/Library/BaseSortCmpLib/BaseSortCmpLib.inf
 
   ShellLib|ShellPkg/Library/UefiShellLib/UefiShellLib.inf
   ShellCommandLib|ShellPkg/Library/UefiShellCommandLib/UefiShellCommandLib.inf
@@ -118,7 +119,9 @@
       NULL|ShellPkg/Library/UefiShellTestCommandsLib/UefiShellTestCommandsLib.inf
 !endif #$(NO_SHELL_PROFILES)
   }
+  # Self Added
   ShellPkg/Application/ShellHelloApp/ShellHelloApp.inf
+  ShellPkg/Application/ShellSortCmpTestApp/ShellSortCmpTestApp.inf
 
   #
   # Build a second version of the shell with all commands integrated
