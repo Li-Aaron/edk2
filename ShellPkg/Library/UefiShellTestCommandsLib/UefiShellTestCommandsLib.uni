@@ -1,25 +1,7 @@
 /** @file
-
-  String definitions for UEFI Shell network 2 commands
-  Copyright (c) 2016, Intel Corporation. All rights reserved.<BR>
-  (C) Copyright 2017 Hewlett Packard Enterprise Development LP<BR>
-
-  This program and the accompanying materials
-  are licensed and made available under the terms and conditions
-  of the BSD License which accompanies this distribution.  The full
-  text of the license may be found at<BR>
-  http://opensource.org/licenses/bsd-license.php
-
-  THE PROGRAM IS DISTRIBUTED UNDER THE BSD LICENSE ON AN "AS IS" BASIS,
-  WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
-
-  Module Name:
-
-   UefiShellNetwork2CommandsLib.uni
-
-  Abstract:
-
-   String definitions for UEFI Shell 2.0 network 2 commands
+  String definitions for UEFI Shell hello commands
+  Simple Hello World command.
+  Self Study usage.
 **/
 
 #langdef   en-US "english"

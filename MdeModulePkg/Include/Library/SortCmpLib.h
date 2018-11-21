@@ -1,7 +1,6 @@
 /** @file
   Library used for sorting method compare.
   Self Study usage.
-
 **/
 #ifndef __SORT_CMP_LIB_H__
 #define __SORT_CMP_LIB_H__
