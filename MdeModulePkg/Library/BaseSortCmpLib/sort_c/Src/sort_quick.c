@@ -1,10 +1,10 @@
 #include "sort.h"
 
 // fast sort partion
-INT32 _SortPartion(INTN a[], INT32 left, INT32 right, BOOLEAN cmp(INTN, INTN))
+INTN _SortPartion(INTN a[], INTN left, INTN right, BOOLEAN cmp(INTN, INTN))
 {
   INTN pivot = a[left];
-  INT32 pivot_idx = left;
+  INTN pivot_idx = left;
 
   while (left < right){
     // find left > pivot and right < pivot
@@ -23,28 +23,28 @@ INT32 _SortPartion(INTN a[], INT32 left, INT32 right, BOOLEAN cmp(INTN, INTN))
 }
 
 // quick sort
-void _SortQuick(INTN a[], INT32 left, INT32 right, BOOLEAN cmp(INTN, INTN))
+void _SortQuick(INTN a[], INTN left, INTN right, BOOLEAN cmp(INTN, INTN))
 {
   // terminate condition
   if (left >= right){
     return;
   }
 
-  INT32 pivot_idx = _SortPartion(a, left, right, cmp);
+  INTN pivot_idx = _SortPartion(a, left, right, cmp);
   // recursion
   _SortQuick(a, left, pivot_idx - 1, cmp);
   _SortQuick(a, pivot_idx + 1, right, cmp);
 }
 
 // quick sort
-void SortQuick(INTN a[], INT32 n)
+void SortQuick(INTN a[], INTN n)
 {
   _SortQuick(a, 0, n - 1, compare);
 }
 
 
 // quick sort with insert sort
-void _SortQuick2(INTN a[], INT32 left, INT32 right, BOOLEAN cmp(INTN, INTN))
+void _SortQuick2(INTN a[], INTN left, INTN right, BOOLEAN cmp(INTN, INTN))
 {
   // terminate condition
   if (right - left < 10){
@@ -52,14 +52,14 @@ void _SortQuick2(INTN a[], INT32 left, INT32 right, BOOLEAN cmp(INTN, INTN))
     return;
   }
 
-  INT32 pivot_idx = _SortPartion(a, left, right, cmp);
+  INTN pivot_idx = _SortPartion(a, left, right, cmp);
   // recursion
   _SortQuick2(a, left, pivot_idx - 1, cmp);
   _SortQuick2(a, pivot_idx + 1, right, cmp);
 }
 
 // quick sort with insert sort caller
-void SortQuick2(INTN a[], INT32 n)
+void SortQuick2(INTN a[], INTN n)
 {
   _SortQuick2(a, 0, n - 1, compare);
 }

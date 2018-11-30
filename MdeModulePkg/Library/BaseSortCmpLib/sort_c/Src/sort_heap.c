@@ -1,10 +1,10 @@
 #include "sort.h"
 
-void _ShiftDown(INTN a[], INT32 parent, INT32 boundary, BOOLEAN cmp(INTN, INTN))
+void _ShiftDown(INTN a[], INTN parent, INTN boundary, BOOLEAN cmp(INTN, INTN))
 {
   // index start with 0
-  INT32 child = parent * 2 + 1;
-  
+  INTN child = parent * 2 + 1;
+
   if (child <= boundary){
     if (child + 1 <= boundary){
       // both 2 values in boundary, compare two child first
@@ -22,18 +22,19 @@ void _ShiftDown(INTN a[], INT32 parent, INT32 boundary, BOOLEAN cmp(INTN, INTN))
 }
 
 // build big root heap
-void _BuildHeap(INTN a[], INT32 start, INT32 stop, BOOLEAN cmp(INTN, INTN))
+void _BuildHeap(INTN a[], INTN start, INTN stop, BOOLEAN cmp(INTN, INTN))
 {
-  INT32 parent;
+  INTN parent;
+  // incase of unsigned overflow
   for (parent = stop/2; parent > start - 1; parent--){
     _ShiftDown(a, parent, stop, cmp);
   }
 }
 
 // heap sort
-void SortHeap(INTN a[], INT32 n)
+void SortHeap(INTN a[], INTN n)
 {
-  INT32 stop = n-1;
+  INTN stop = n-1;
   // Building Big Root Heap
   _BuildHeap(a, 0, stop, compare);
 

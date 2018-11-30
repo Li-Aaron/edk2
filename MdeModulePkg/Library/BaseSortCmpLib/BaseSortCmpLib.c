@@ -31,7 +31,7 @@ VOID
 EFIAPI
 SortFunctionCaller (
   IN OUT   INTN                         *BufferToSort,
-  IN CONST UINTN                        Count,
+  IN CONST INTN                         Count,
   IN       SORT_FUNC                    SortFunction
   )
 {

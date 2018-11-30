@@ -1,9 +1,9 @@
 #include "sort.h"
 
 // select sort
-void SortSelect(INTN a[], INT32 n)
+void SortSelect(INTN a[], INTN n)
 {
-  INT32 i, j, minIdx;
+  INTN i, j, minIdx;
 
   for (i = 0; i < n-1; i++)
   {

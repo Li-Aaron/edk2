@@ -21,7 +21,7 @@ typedef
 VOID
 (EFIAPI *SORT_FUNC)(
   IN OUT INTN                 Array[],
-  IN     INT32                ArrayLength
+  IN     INTN                 ArrayLength
   );
 
 
@@ -46,7 +46,7 @@ VOID
 EFIAPI
 SortFunctionCaller (
   IN OUT   INTN                         *BufferToSort,
-  IN CONST UINTN                        Count,
+  IN CONST INTN                         Count,
   IN       SORT_FUNC                    SortFunction
   );
 

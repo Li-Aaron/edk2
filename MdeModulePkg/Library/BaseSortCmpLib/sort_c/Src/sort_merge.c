@@ -1,11 +1,11 @@
 #include "sort.h"
 
-void _Merge(INTN a[], INT32 left, INT32 middle, INT32 right, BOOLEAN cmp(INTN, INTN))
+void _Merge(INTN a[], INTN left, INTN middle, INTN right, BOOLEAN cmp(INTN, INTN))
 {
-  INT32 idx = 0;
-  INT32 idxL = left;
-  INT32 idxR = middle;
-  INT32 len = right - left;
+  INTN idx = 0;
+  INTN idxL = left;
+  INTN idxR = middle;
+  INTN len = right - left;
 
   // generate a memory space for merge
   INTN *a_temp;
@@ -42,7 +42,7 @@ void _Merge(INTN a[], INT32 left, INT32 middle, INT32 right, BOOLEAN cmp(INTN, I
   FreePool(a_temp);
 }
 
-void _SortMerge(INTN a[], INT32 left, INT32 right, BOOLEAN cmp(INTN, INTN))
+void _SortMerge(INTN a[], INTN left, INTN right, BOOLEAN cmp(INTN, INTN))
 {
   if (right - left <= 1){
     // Terminate Condition
@@ -51,14 +51,14 @@ void _SortMerge(INTN a[], INT32 left, INT32 right, BOOLEAN cmp(INTN, INTN))
     return;
   }
 
-  INT32 middle = (left + right) / 2;
+  INTN middle = (left + right) / 2;
   _SortMerge(a, left, middle, cmp);
   _SortMerge(a, middle, right, cmp);
   _Merge(a, left, middle, right, cmp);
 }
 
 
-void SortMerge(INTN a[], INT32 n)
+void SortMerge(INTN a[], INTN n)
 {
   _SortMerge(a, 0, n, compare);
 }
