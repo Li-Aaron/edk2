@@ -30,8 +30,9 @@ RandomNumberGen (
 {
   UINTN i;
 
+  //FIXME: this is not a good way to gen random number
   for(i = 0; i < Count; i++){
-    AsmRdRand32((UINT32*)&Buffer[i]);
+    AsmRdRand64((UINT64*)&Buffer[i]);
     Buffer[i] %= 1000;
   }
 }
@@ -86,7 +87,7 @@ ShellAppMain (
   //
   for(i = 0; i < SORT_FUNC_MAX_NUM; i++){
     CopyMem(BufferCpy, Buffer, sizeof(INTN) * Count);
-    SortFunctionCaller(BufferCpy, Count, SortFunctionWarp[i].SortFunc);
+    SortFunctionCaller(BufferCpy, (INTN)Count, SortFunctionWarp[i].SortFunc);
 
     //
     // Print result
