@@ -1,9 +1,9 @@
 #include "sort.h"
 
 // bubble sort
-void SortBubble(INTN a[], INT32 n)
+void SortBubble(INTN a[], INTN n)
 {
-  INT32 i, j;
+  INTN i, j;
   for (i = 0; i < n; i++)
   {
     for (j = 0; j < n-1; j++)

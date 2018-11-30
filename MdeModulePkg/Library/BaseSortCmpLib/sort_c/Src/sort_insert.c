@@ -1,10 +1,10 @@
 #include "sort.h"
 
-void SortInsert(INTN a[], INT32 n)
+void SortInsert(INTN a[], INTN n)
 {
   INTN target;
-  INT32 j;
-  for (INT32 i = 1; i < n; i++){
+  INTN j;
+  for (INTN i = 1; i < n; i++){
     target = a[i];
     j = i;
     // using compare instead of a <= b

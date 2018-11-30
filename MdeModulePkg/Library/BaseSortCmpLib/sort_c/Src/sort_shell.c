@@ -1,11 +1,11 @@
 #include "sort.h"
 
 // shell sort
-void SortShell(INTN a[], INT32 n)
+void SortShell(INTN a[], INTN n)
 {
   INTN target;
-  INT32 i, idx1, idx2;
-  INT32 step = n; // Initial Spacing Value
+  INTN i, idx1, idx2;
+  INTN step = n; // Initial Spacing Value
   while(step >= 1){
     step /= 2;
     for(i = 0; i < step; i++){
