@@ -542,7 +542,7 @@
   ShellPkg/Application/ShellSortCmpTestApp/ShellSortCmpTestApp.inf
   MdeModulePkg/Application/HelloApp/HelloApp.inf
   MdeModulePkg/Application/TestSystemConsoleApp/TestSystemConsoleApp.inf
-  MdeModulePkg/Application/TestSystemMemoryApp/TestSystemMemoryApp.inf
+  MdeModulePkg/Application/TestSystemServiceApp/TestSystemServiceApp.inf
 
 ###################################################################################################
 #

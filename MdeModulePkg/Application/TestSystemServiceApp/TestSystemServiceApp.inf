@@ -1,11 +1,11 @@
 ##  @file
-#  An Application to test Memory Service Usage.
+#  An Application to test System Service Usage.
 #  Self Study usage.
 ##
 
 [Defines]
   INF_VERSION                    = 0x00010006
-  BASE_NAME                      = TestSystemMemoryApp
+  BASE_NAME                      = TestSystemServiceApp
   FILE_GUID                      = 30757223-bc2c-49b9-b0aa-064e64018f34
   MODULE_TYPE                    = UEFI_APPLICATION
   VERSION_STRING                 = 1.0
@@ -18,7 +18,11 @@
 #
 
 [Sources]
-  TestSystemMemoryApp.c
+  TestSystemServiceApp.c
+  TestSystemServiceApp.h
+  TestDebug.c
+  TestAllocateMemory.c
+  TestGetMemoryMap.c
 
 [Packages]
   MdePkg/MdePkg.dec
