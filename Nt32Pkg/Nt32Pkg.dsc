@@ -543,6 +543,7 @@
   MdeModulePkg/Application/HelloApp/HelloApp.inf
   MdeModulePkg/Application/TestSystemConsoleApp/TestSystemConsoleApp.inf
   MdeModulePkg/Application/TestSystemServiceApp/TestSystemServiceApp.inf
+  MdeModulePkg/Application/TestSystemRtServiceApp/TestSystemRtServiceApp.inf
 
 ###################################################################################################
 #
