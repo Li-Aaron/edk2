@@ -1,0 +1,48 @@
+##  @file
+#  An Application to test System Event Usage.
+#
+#  A Wait Event will be triggered when signaled. when process is waiting, will do notification process.
+#  A Timer Event will be triggered when timer timeout.
+#  A Timer Event with signal will be triggered when timer timeout, and do notification process.
+#
+#  Self Study usage.
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010006
+  BASE_NAME                      = TestSystemEventApp
+  FILE_GUID                      = 6c401725-3b6e-4d5c-b140-fc16704fb73e
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = UefiMain
+
+#
+# The following information is for reference only and not required by the build tools.
+#
+#  VALID_ARCHITECTURES           = IA32 X64
+#
+
+[Sources]
+  TestSystemEventApp.c
+  TestSystemEventApp.h
+  TestWaitForEvent.c
+  TestNotifyEvent.c
+  TestNotifyTimerSignal.c
+  TestNotifyEventEx.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+
+[LibraryClasses]
+  UefiLib
+  UefiApplicationEntryPoint
+  DebugLib
+  UefiBootServicesTableLib
+  UefiRuntimeServicesTableLib
+  BaseMemoryLib
+  MemoryAllocationLib
+
+[Guids]
+  gEfiGlobalVariableGuid         ## CONSUME ## Variable Guid
+  gSelfEventExGuid               ## CONSUME ## Event Guid

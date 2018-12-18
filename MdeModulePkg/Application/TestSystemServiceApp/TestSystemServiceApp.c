@@ -37,10 +37,10 @@ UefiMain (
   DescriptorVersion = 0;
 
   Status = TestAllocate();
-  DEBUG((EFI_D_INFO, "Status = 0x%x\n", Status));
+  DEBUG((EFI_D_INFO, "TestAllocate() Status : 0x%x\n", Status));
 
   Status = TestGetMemoryMap();
-  DEBUG((EFI_D_INFO, "Status = 0x%x\n", Status));
+  DEBUG((EFI_D_INFO, "TestGetMemoryMap() Status : 0x%x\n", Status));
 
   //
   // Print Firmware Vendor
