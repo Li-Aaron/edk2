@@ -2,6 +2,7 @@
 #  An Application to test System Event Usage.
 #
 #  A Wait Event will be triggered when signaled. when process is waiting, will do notification process.
+#  A Signal Event will be triggered by signal. when event is triggerd, will do notification process.
 #  A Timer Event will be triggered when timer timeout.
 #  A Timer Event with signal will be triggered when timer timeout, and do notification process.
 #

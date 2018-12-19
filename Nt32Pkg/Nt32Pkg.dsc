@@ -545,6 +545,7 @@
   MdeModulePkg/Application/TestSystemServiceApp/TestSystemServiceApp.inf
   MdeModulePkg/Application/TestSystemRtServiceApp/TestSystemRtServiceApp.inf
   MdeModulePkg/Application/TestSystemEventApp/TestSystemEventApp.inf
+  MdeModulePkg/Application/TestSystemTimerApp/TestSystemTimerApp.inf
 
 ###################################################################################################
 #
