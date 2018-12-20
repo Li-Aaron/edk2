@@ -936,3 +936,6 @@
       NULL|SecurityPkg/Library/HashInstanceLibSha512/HashInstanceLibSha512.inf
   }
 !endif
+
+# Self Added
+MdeModulePkg/Application/TestMouseKeyboardApp/TestMouseKeyboardApp.inf

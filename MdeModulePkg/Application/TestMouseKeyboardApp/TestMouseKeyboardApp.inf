@@ -1,0 +1,37 @@
+##  @file
+#  An Application to Mouse and Keyboard Usage.
+#  Not available on NT32 Platform.
+#  Self Study usage.
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010006
+  BASE_NAME                      = TestMouseKeyboardApp
+  FILE_GUID                      = c4eebc05-e32e-4a6c-b76c-7a12d6067335
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = UefiMain
+
+#
+# The following information is for reference only and not required by the build tools.
+#
+#  VALID_ARCHITECTURES           = IA32 X64
+#
+
+[Sources]
+  TestMouseKeyboardApp.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+
+[LibraryClasses]
+  UefiLib
+  UefiApplicationEntryPoint
+  DebugLib
+  UefiBootServicesTableLib
+  UefiRuntimeServicesTableLib
+  BaseMemoryLib
+  MemoryAllocationLib
+
+[Protocols]
+  gEfiSimplePointerProtocolGuid                  ## BY_START
