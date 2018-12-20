@@ -1040,3 +1040,6 @@
 !if $(LOAD_X64_ON_IA32_ENABLE) == TRUE
   OvmfPkg/CompatImageLoaderDxe/CompatImageLoaderDxe.inf
 !endif
+
+# Self Added
+MdeModulePkg/Application/TestMouseKeyboardApp/TestMouseKeyboardApp.inf
