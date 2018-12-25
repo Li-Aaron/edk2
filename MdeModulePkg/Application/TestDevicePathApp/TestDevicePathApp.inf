@@ -1,0 +1,38 @@
+##  @file
+#  An Application to Print Device Path.
+#  Self Study usage.
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010006
+  BASE_NAME                      = TestDevicePathApp
+  FILE_GUID                      = 963a617e-9480-4d66-a766-20f880a494df
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = UefiMain
+
+#
+# The following information is for reference only and not required by the build tools.
+#
+#  VALID_ARCHITECTURES           = IA32 X64
+#
+
+[Sources]
+  TestDevicePathApp.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+
+[LibraryClasses]
+  UefiLib
+  UefiApplicationEntryPoint
+  DebugLib
+  UefiBootServicesTableLib
+  UefiRuntimeServicesTableLib
+  BaseMemoryLib
+  MemoryAllocationLib
+
+[Protocols]
+  gEfiDiskIoProtocolGuid                  ## BY_START
+  gEfiDevicePathProtocolGuid              ## BY_START
+  gEfiDevicePathToTextProtocolGuid        ## BY_START
