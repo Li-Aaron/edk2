@@ -1042,4 +1042,4 @@
 !endif
 
 # Self Added
-MdeModulePkg/Application/TestMouseKeyboardApp/TestMouseKeyboardApp.inf
+TestPkg/Application/TestMouseKeyboardApp/TestMouseKeyboardApp.inf

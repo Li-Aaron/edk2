@@ -44,7 +44,7 @@
   UefiHiiServicesLib|MdeModulePkg/Library/UefiHiiServicesLib/UefiHiiServicesLib.inf
   HiiLib|MdeModulePkg/Library/UefiHiiLib/UefiHiiLib.inf
   !include NetworkPkg/NetworkLibs.dsc.inc
-  SortCmpLib|MdeModulePkg/Library/BaseSortCmpLib/BaseSortCmpLib.inf
+  SortCmpLib|TestPkg/Library/BaseSortCmpLib/BaseSortCmpLib.inf
 
   ShellLib|ShellPkg/Library/UefiShellLib/UefiShellLib.inf
   ShellCommandLib|ShellPkg/Library/UefiShellCommandLib/UefiShellCommandLib.inf

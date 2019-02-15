@@ -1,0 +1,17 @@
+## @file  TestPkg.dec
+# self test pkg
+##
+
+
+[Defines]
+  DEC_SPECIFICATION              = 0x00010005
+  PACKAGE_NAME                   = TestPkg
+  PACKAGE_GUID                   = 774a61b5-dd87-4a57-8ed8-0cde88829b97
+  PACKAGE_VERSION                = 0.01
+
+[Includes]
+  Include
+
+[Guids]
+  ## TODO: SelfTestDefined Include/Guid/SelfTestDefined.h
+  gSelfEventExGuid =   { 0xaed4d53f, 0x3b48, 0x4dba, {0xbc, 0x5e, 0xa0, 0x22, 0xe1, 0xb2, 0xe6, 0x95} }

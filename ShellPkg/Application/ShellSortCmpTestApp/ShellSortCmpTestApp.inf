@@ -23,7 +23,7 @@
 [Packages]
   MdePkg/MdePkg.dec
   ShellPkg/ShellPkg.dec
-  MdeModulePkg/MdeModulePkg.dec
+  TestPkg/TestPkg.dec
 
 [LibraryClasses]
   ShellCEntryLib
