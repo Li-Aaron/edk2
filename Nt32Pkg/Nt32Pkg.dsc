@@ -169,7 +169,7 @@
   IntrinsicLib|CryptoPkg/Library/IntrinsicLib/IntrinsicLib.inf
   ResetSystemLib|Nt32Pkg/Library/ResetSystemLib/ResetSystemLib.inf
   ShellCEntryLib|ShellPkg/Library/UefiShellCEntryLib/UefiShellCEntryLib.inf
-  SortCmpLib|MdeModulePkg/Library/BaseSortCmpLib/BaseSortCmpLib.inf
+  SortCmpLib|TestPkg/Library/BaseSortCmpLib/BaseSortCmpLib.inf
 !if $(TLS_ENABLE) == TRUE
   OpensslLib|CryptoPkg/Library/OpensslLib/OpensslLib.inf
   SafeIntLib|MdePkg/Library/BaseSafeIntLib/BaseSafeIntLib.inf
@@ -540,15 +540,15 @@
   # Self Added
   ShellPkg/Application/ShellHelloApp/ShellHelloApp.inf
   ShellPkg/Application/ShellSortCmpTestApp/ShellSortCmpTestApp.inf
-  MdeModulePkg/Application/HelloApp/HelloApp.inf
-  MdeModulePkg/Application/TestSystemConsoleApp/TestSystemConsoleApp.inf
-  MdeModulePkg/Application/TestSystemServiceApp/TestSystemServiceApp.inf
-  MdeModulePkg/Application/TestSystemRtServiceApp/TestSystemRtServiceApp.inf
-  MdeModulePkg/Application/TestSystemEventApp/TestSystemEventApp.inf
-  MdeModulePkg/Application/TestSystemTimerApp/TestSystemTimerApp.inf
-  # MdeModulePkg/Application/TestMouseKeyboardApp/TestMouseKeyboardApp.inf
-  MdeModulePkg/Application/TestDevicePathApp/TestDevicePathApp.inf
-  MdeModulePkg/Application/TestFileIoApp/TestFileIoApp.inf
+  TestPkg/Application/HelloApp/HelloApp.inf
+  TestPkg/Application/TestSystemConsoleApp/TestSystemConsoleApp.inf
+  TestPkg/Application/TestSystemServiceApp/TestSystemServiceApp.inf
+  TestPkg/Application/TestSystemRtServiceApp/TestSystemRtServiceApp.inf
+  TestPkg/Application/TestSystemEventApp/TestSystemEventApp.inf
+  TestPkg/Application/TestSystemTimerApp/TestSystemTimerApp.inf
+  # TestPkg/Application/TestMouseKeyboardApp/TestMouseKeyboardApp.inf
+  TestPkg/Application/TestDevicePathApp/TestDevicePathApp.inf
+  TestPkg/Application/TestFileIoApp/TestFileIoApp.inf
 
 ###################################################################################################
 #

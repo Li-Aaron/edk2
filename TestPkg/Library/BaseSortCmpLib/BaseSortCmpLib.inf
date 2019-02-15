@@ -30,7 +30,7 @@
 
 [Packages]
   MdePkg/MdePkg.dec
-  MdeModulePkg/MdeModulePkg.dec
+  TestPkg/TestPkg.dec
 
 [LibraryClasses]
   MemoryAllocationLib
