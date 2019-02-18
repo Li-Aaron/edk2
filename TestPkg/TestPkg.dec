@@ -13,5 +13,42 @@
   Include
 
 [Guids]
-  ## TODO: SelfTestDefined Include/Guid/SelfTestDefined.h
+  # SelfTestDefined Include/Guid/SelfTestDefined.h
   gSelfEventExGuid =   { 0xaed4d53f, 0x3b48, 0x4dba, {0xbc, 0x5e, 0xa0, 0x22, 0xe1, 0xb2, 0xe6, 0x95} }
+
+  # // {de6ad647-dfda-4e3d-a469-8503e2d8be95}
+  gSelfTokenSpaceGuid = { 0xde6ad647, 0xdfda, 0x4e3d, {0xa4, 0x69, 0x85, 0x03, 0xe2, 0xd8, 0xbe, 0x95} }
+
+
+
+[PcdsFixedAtBuild]
+  # use PcdGet8 (PcdTestFixedAtBuild1)
+  gSelfTokenSpaceGuid.PcdTestFixedAtBuild1|0x5A|UINT8|0x20000001
+  gSelfTokenSpaceGuid.PcdTestFixedAtBuild2|0x5A5A|UINT16|0x20000002
+  gSelfTokenSpaceGuid.PcdTestFixedAtBuild3|0x5A5A5A5A|UINT32|0x20000003
+  gSelfTokenSpaceGuid.PcdTestFixedAtBuild4|0x5A5A5A5A5A5A5A5A|UINT64|0x20000004
+
+[PcdsFeatureFlag]
+  # use FeaturePcdGet() (preferred) or PcdGetBool()
+  gSelfTokenSpaceGuid.PcdTestFeatureFlag1|FALSE|BOOLEAN|0x30000001
+  gSelfTokenSpaceGuid.PcdTestFeatureFlag2|FALSE|BOOLEAN|0x30000002
+
+[PcdsPatchableInModule]
+  # use PcdGet16 (PcdTestPatchableInModule1)
+  # use PcdSet16 (PcdTestPatchableInModule1)
+  gSelfTokenSpaceGuid.PcdTestPatchableInModule1|0xBBBB|UINT16|0x20100001
+  gSelfTokenSpaceGuid.PcdTestPatchableInModule2|0xBBBB|UINT16|0x20100002
+  gSelfTokenSpaceGuid.PcdRunedPatchableInModule|0x00|UINT32|0x20100003
+
+[PcdsFixedAtBuild, PcdsPatchableInModule]
+# [PcdsPatchableInModule, PcdsFixedAtBuild]
+  # use PcdGet16 (PcdTestFixedPatchableInModule1)
+  # IF fixed at build exist, then it will be fixed at build
+  gSelfTokenSpaceGuid.PcdTestFixedPatchableInModule1|0xBBBB|UINT16|0x20200001
+  gSelfTokenSpaceGuid.PcdTestFixedPatchableInModule2|0xBBBB|UINT16|0x20200002
+
+[PcdsDynamic]
+  # UEFI driver and application can use Dynamic/DynamicEx PCDs when they are built together with platform.
+  gSelfTokenSpaceGuid.PcdTestDynamic1|0x01|UINT32|0x40000001
+  gSelfTokenSpaceGuid.PcdTestDynamic2|0x02|UINT32|0x40000002
+  gSelfTokenSpaceGuid.PcdRunedDynamic|0x00|UINT32|0x40000003

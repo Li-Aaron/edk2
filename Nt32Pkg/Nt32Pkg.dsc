@@ -169,6 +169,7 @@
   IntrinsicLib|CryptoPkg/Library/IntrinsicLib/IntrinsicLib.inf
   ResetSystemLib|Nt32Pkg/Library/ResetSystemLib/ResetSystemLib.inf
   ShellCEntryLib|ShellPkg/Library/UefiShellCEntryLib/UefiShellCEntryLib.inf
+  #TODO: self defined
   SortCmpLib|TestPkg/Library/BaseSortCmpLib/BaseSortCmpLib.inf
 !if $(TLS_ENABLE) == TRUE
   OpensslLib|CryptoPkg/Library/OpensslLib/OpensslLib.inf
@@ -537,7 +538,7 @@
       BcfgCommandLib|ShellPkg/Library/UefiShellBcfgCommandLib/UefiShellBcfgCommandLib.inf
       FileHandleLib|MdePkg/Library/UefiFileHandleLib/UefiFileHandleLib.inf
   }
-  # Self Added
+  #TODO: Self Added
   ShellPkg/Application/ShellHelloApp/ShellHelloApp.inf
   ShellPkg/Application/ShellSortCmpTestApp/ShellSortCmpTestApp.inf
   TestPkg/Application/HelloApp/HelloApp.inf
@@ -549,6 +550,7 @@
   # TestPkg/Application/TestMouseKeyboardApp/TestMouseKeyboardApp.inf
   TestPkg/Application/TestDevicePathApp/TestDevicePathApp.inf
   TestPkg/Application/TestFileIoApp/TestFileIoApp.inf
+  TestPkg/Application/TestPcdApp/TestPcdApp.inf
 
 ###################################################################################################
 #

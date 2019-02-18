@@ -276,6 +276,8 @@ INF  NetworkPkg/TlsDxe/TlsDxe.inf
 INF  NetworkPkg/TlsAuthConfigDxe/TlsAuthConfigDxe.inf
 !endif
 INF  MdeModulePkg/Application/BootManagerMenuApp/BootManagerMenuApp.inf
+#TODO: self added
+INF  TestPkg/Application/TestPcdApp/TestPcdApp.inf
 ################################################################################
 #
 # FILE statements are provided so that a platform integrator can include

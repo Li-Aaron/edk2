@@ -1,0 +1,77 @@
+##  @file
+#  An Application to test Pcd.
+#  Build and see AutoGen.h/AutoGen.c see what is a PCD
+#  Self Study usage.
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010006
+  BASE_NAME                      = TestPcdApp
+  FILE_GUID                      = faf87738-d51f-4c71-b363-77239012bd25
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = UefiMain
+
+#
+# The following information is for reference only and not required by the build tools.
+#
+#  VALID_ARCHITECTURES           = IA32 X64
+#
+
+[Sources]
+  TestPcdApp.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  TestPkg/TestPkg.dec
+
+[LibraryClasses]
+  UefiLib
+  UefiApplicationEntryPoint
+  DebugLib
+  UefiBootServicesTableLib
+  UefiRuntimeServicesTableLib
+  BaseMemoryLib
+  MemoryAllocationLib
+  PcdLib
+
+[Pcd]
+# [FixedPcd]
+  # Fixed/Feature PCD are defined in AutoGen.h
+  # can be modified in INF file
+  # This section must not be present in INF files that describe a binary only module.
+  # cannot use set
+  gSelfTokenSpaceGuid.PcdTestFixedAtBuild1
+  gSelfTokenSpaceGuid.PcdTestFixedAtBuild2
+  gSelfTokenSpaceGuid.PcdTestFixedAtBuild3
+  gSelfTokenSpaceGuid.PcdTestFixedAtBuild4|0xA5A5A5A5
+
+# [FeaturePcd]
+  gSelfTokenSpaceGuid.PcdTestFeatureFlag1
+  gSelfTokenSpaceGuid.PcdTestFeatureFlag2|TRUE
+
+# [FixedPcd] # [PatchPcd]
+  # can be modified in INF file
+  # This section may be present in INF files that describe a binary only module.
+  # This type of PCD is one of the recommended formats for modules that will be distributed in binary format.
+  # cannot use set
+  gSelfTokenSpaceGuid.PcdTestFixedPatchableInModule1
+  gSelfTokenSpaceGuid.PcdTestFixedPatchableInModule2|0xCCCC
+
+# [PatchPcd]
+  # can be modified in INF file
+  # This section may be present in INF files that describe a binary only module.
+  # This type of PCD is one of the recommended formats for modules that will be distributed in binary format.
+  # can use set
+  gSelfTokenSpaceGuid.PcdTestPatchableInModule1
+  gSelfTokenSpaceGuid.PcdTestPatchableInModule2|0xCCCC
+  gSelfTokenSpaceGuid.PcdRunedPatchableInModule
+
+# [Pcd]
+  # Dynamic Pcds
+  # This section must not be present in INF files that describe a binary only module.
+  # can use set
+  # UEFI driver and application can use Dynamic/DynamicEx PCDs when they are built together with platform.
+  gSelfTokenSpaceGuid.PcdTestDynamic1
+  gSelfTokenSpaceGuid.PcdTestDynamic2|0xCCCCCCCC
+  gSelfTokenSpaceGuid.PcdRunedDynamic
