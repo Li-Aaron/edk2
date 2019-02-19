@@ -35,10 +35,12 @@
   MemoryAllocationLib
   PcdLib
 
+[Guids]
+  gSelfTokenSpaceGuid
+
 [Pcd]
 # [FixedPcd]
   # Fixed/Feature PCD are defined in AutoGen.h
-  # can be modified in INF file
   # This section must not be present in INF files that describe a binary only module.
   # cannot use set
   gSelfTokenSpaceGuid.PcdTestFixedAtBuild1
@@ -51,15 +53,11 @@
   gSelfTokenSpaceGuid.PcdTestFeatureFlag2|TRUE
 
 # [FixedPcd] # [PatchPcd]
-  # can be modified in INF file
-  # This section may be present in INF files that describe a binary only module.
-  # This type of PCD is one of the recommended formats for modules that will be distributed in binary format.
   # cannot use set
   gSelfTokenSpaceGuid.PcdTestFixedPatchableInModule1
   gSelfTokenSpaceGuid.PcdTestFixedPatchableInModule2|0xCCCC
 
 # [PatchPcd]
-  # can be modified in INF file
   # This section may be present in INF files that describe a binary only module.
   # This type of PCD is one of the recommended formats for modules that will be distributed in binary format.
   # can use set
@@ -75,3 +73,14 @@
   gSelfTokenSpaceGuid.PcdTestDynamic1
   gSelfTokenSpaceGuid.PcdTestDynamic2|0xCCCCCCCC
   gSelfTokenSpaceGuid.PcdRunedDynamic
+
+# [PcdEx]
+  # Dynamic Ex Pcds
+  # This section may be present in INF files that describe a binary only module.
+  # This type of PCD is one of the recommended formats for modules that will be distributed in binary format.
+  gSelfTokenSpaceGuid.PcdTestDynamicEx1
+  gSelfTokenSpaceGuid.PcdTestDynamicEx2
+
+# structured Pcd
+  gSelfTokenSpaceGuid.PcdTestStructure
+  

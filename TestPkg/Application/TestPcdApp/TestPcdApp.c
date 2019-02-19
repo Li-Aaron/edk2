@@ -12,6 +12,53 @@
 #include <Library/BaseMemoryLib.h>
 #include <Library/MemoryAllocationLib.h>
 #include <Library/PcdLib.h>
+#include <Pcd/TestPcd.h>
+
+VOID
+InternalDumpDataDebug (
+  IN UINT8  *Data,
+  IN UINTN  Size
+  )
+{
+  UINTN  Index;
+
+  for (Index = 0; Index < Size; Index++) {
+    DEBUG ((DEBUG_INFO, "%02x ", (UINTN)Data[Index]));
+  }
+}
+
+
+/**
+  Dump Hex.
+
+  @param[in]  Data   Pointer to Data Block
+  @param[in]  Size   Data Block Size
+
+**/
+VOID
+InternalDumpHexDebug (
+  IN UINT8  *Data,
+  IN UINTN  Size
+  )
+{
+  UINTN   Index;
+  UINTN   Count;
+  UINTN   Left;
+
+#define COLUME_SIZE  (16)
+  Count = Size / COLUME_SIZE;
+  Left  = Size % COLUME_SIZE;
+  for (Index = 0; Index < Count; Index++) {
+   InternalDumpDataDebug (Data + Index * COLUME_SIZE, COLUME_SIZE);
+    DEBUG ((DEBUG_INFO, "\n"));
+  }
+  if (Left != 0) {
+    InternalDumpDataDebug(Data + Index * COLUME_SIZE, Left);
+    DEBUG ((DEBUG_INFO, "\n"));
+  }
+  DEBUG ((DEBUG_INFO, "\n"));
+}
+
 
 /**
   Application Entry.
@@ -100,6 +147,36 @@ UefiMain (
   DEBUG((EFI_D_INFO, "[PcdTest.Runtime] PcdSet32S(PcdRunedDynamic) returns:0x%x.\n", Status));
   // Not be cleared
   DEBUG((EFI_D_INFO, "[PcdTest.Runtime] (Updated)PcdRunedDynamic:0x%x.\n", PcdGet32 (PcdRunedDynamic)));
+
+  //
+  // Dynamic Ex
+  //
+  // Dynamic PCD access by the internal token number. Its access is only in one platform build.
+  // DynamicEx PCD access by TokenSpaceGuid and token number. Its access can cross the platform build. But, it takes more size in PCD DB.
+  // For binary (.efi) modules, only PATCHABLE_IN_MODULE or DYNAMIC_EX PCDs may be specified. 
+  // FixedPcd, DYNAMIC and FeaturePcd sections are not permitted for binary distribution of modules.
+  DEBUG((EFI_D_INFO, "[PcdTest] PcdTestDynamicEx1:0x%x.\n", PcdGetEx32(&gSelfTokenSpaceGuid, PcdTestDynamicEx1)));
+  DEBUG((EFI_D_INFO, "[PcdTest] PcdTestDynamicEx1:0x%x.\n", PcdGet32(PcdTestDynamicEx1)));
+  DEBUG((EFI_D_INFO, "[PcdTest] PcdTestDynamicEx2:0x%x.\n", PcdGetEx32(&gSelfTokenSpaceGuid, PcdTestDynamicEx2)));
+
+  //
+  // Structured Pcd
+  //
+  // Init get value
+  TESTPCD *TestBuffer = (TESTPCD *)PcdGetPtr(PcdTestStructure);
+  UINTN    TestSize   = PcdGetSize(PcdTestStructure);
+  DEBUG((EFI_D_INFO, "[PcdTest.Struct] PcdTestStructure:\n"));
+  InternalDumpHexDebug((UINT8 *)TestBuffer, TestSize);
+  DEBUG((EFI_D_INFO, "[PcdTest.Struct] PcdTestStructure Size:%d\n", TestSize));
+  // Update
+  TestBuffer->A = 0x2;
+  TestBuffer->E.Bar = 0xCCCCCCCCCCCCCCCC;
+  Status = PcdSetPtrS(PcdTestStructure, &TestSize, TestBuffer);
+  DEBUG((EFI_D_INFO, "[PcdTest.Struct] PcdSetPtrS(PcdTestStructure) returns:0x%x.\n", Status));
+  // Result
+  DEBUG((EFI_D_INFO, "[PcdTest.Struct] PcdTestStructure(Updated):\n"));
+  InternalDumpHexDebug((UINT8 *)TestBuffer, TestSize);
+
 
   DEBUG((EFI_D_INFO, "[PcdTest] PcdTestApp End.\n"));
 

@@ -12,6 +12,10 @@
 [Includes]
   Include
 
+[LibraryClasses]
+  ##  @libraryclass  SortCmpLib.
+  SortCmpLib|Include/Library/SortCmpLib.h
+
 [Guids]
   # SelfTestDefined Include/Guid/SelfTestDefined.h
   gSelfEventExGuid =   { 0xaed4d53f, 0x3b48, 0x4dba, {0xbc, 0x5e, 0xa0, 0x22, 0xe1, 0xb2, 0xe6, 0x95} }
@@ -52,3 +56,26 @@
   gSelfTokenSpaceGuid.PcdTestDynamic1|0x01|UINT32|0x40000001
   gSelfTokenSpaceGuid.PcdTestDynamic2|0x02|UINT32|0x40000002
   gSelfTokenSpaceGuid.PcdRunedDynamic|0x00|UINT32|0x40000003
+
+[PcdsDynamicEx]
+  gSelfTokenSpaceGuid.PcdTestDynamicEx1|0x11|UINT32|0x40100001
+  gSelfTokenSpaceGuid.PcdTestDynamicEx2|0x22|UINT32|0x40100002
+
+[PcdsDynamic, PcdsDynamicEx] 
+  # Library/TestPcd.h --> TESTPCD
+  gSelfTokenSpaceGuid.PcdTestStructure|{0x0}|TESTPCD|0x80000001 {
+    <HeaderFiles>
+      Pcd/TestPcd.h
+    <Packages>
+      # MdePkg/MdePkg.dec
+      TestPkg/TestPkg.dec
+  }
+  gSelfTokenSpaceGuid.PcdTestStructure.Bool|TRUE
+  gSelfTokenSpaceGuid.PcdTestStructure.A|0x1
+  gSelfTokenSpaceGuid.PcdTestStructure.B|0x2
+  gSelfTokenSpaceGuid.PcdTestStructure.C|0x33
+  gSelfTokenSpaceGuid.PcdTestStructure.D|0x44
+  gSelfTokenSpaceGuid.PcdTestStructure.E.Foo|{'%','^','&','a','b','c'}
+  gSelfTokenSpaceGuid.PcdTestStructure.Guid|{GUID("d8fe6336-cb0b-4f1d-8719-77e0ea0af98f")}
+  gSelfTokenSpaceGuid.PcdTestStructure.FlexibleArray|"I'm Happy"
+
