@@ -44,6 +44,15 @@ EFI_STATUS
 EFIAPI
 TestGetVariable( VOID );
 
+/**
+  Test GetVariable / SetVariable (difference length).
+
+  @retval EFI_SUCCESS            Command completed successfully.
+
+**/
+EFI_STATUS
+EFIAPI
+TestSetVariable( VOID );
 
 /**
   Test GetNextVariableName.

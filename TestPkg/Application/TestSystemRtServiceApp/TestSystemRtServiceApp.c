@@ -26,6 +26,9 @@ UefiMain (
   Status = TestGetVariable();
   DEBUG((EFI_D_INFO, "TestGetVariable() Status : 0x%X\r\n", Status));
 
+  Status = TestSetVariable();
+  DEBUG((EFI_D_INFO, "TestSetVariable() Status : 0x%X\r\n", Status));
+
   Status = TestGetNextVariableName();
   DEBUG((EFI_D_INFO, "TestGetNextVariableName() Status : 0x%X\r\n", Status));
 
