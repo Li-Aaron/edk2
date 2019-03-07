@@ -26,6 +26,7 @@
 
 [Packages]
   MdePkg/MdePkg.dec
+  TestPkg/TestPkg.dec
 
 [LibraryClasses]
   UefiLib
@@ -38,3 +39,4 @@
 
 [Guids]
   gEfiGlobalVariableGuid         ## CONSUME ## Variable Guid
+  gSelfVariableGuid              ## CONSUME ## Variable Guid
