@@ -1,0 +1,25 @@
+## @file
+#  Test Aslc
+#  Self Study usage.
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = TestAslc
+  FILE_GUID                      = 1f7e4c8f-8388-405e-b4c9-978041933bcd
+  MODULE_TYPE                    = USER_DEFINED
+  VERSION_STRING                 = 1.0
+
+#
+# The following information is for reference only and not required by the build tools.
+#
+#  VALID_ARCHITECTURES           = IA32 X64 EBC
+#
+
+[Sources]
+  TestAslc.aslc
+
+[Packages]
+  MdePkg/MdePkg.dec
+
+
