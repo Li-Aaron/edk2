@@ -278,6 +278,8 @@ INF  NetworkPkg/TlsAuthConfigDxe/TlsAuthConfigDxe.inf
 INF  MdeModulePkg/Application/BootManagerMenuApp/BootManagerMenuApp.inf
 #TODO: self added
 INF  TestPkg/Application/TestPcdApp/TestPcdApp.inf
+INF RuleOverride = ACPI TestPkg/Application/TestAslc/TestAslc.inf
+
 ################################################################################
 #
 # FILE statements are provided so that a platform integrator can include
@@ -427,4 +429,9 @@ INF MdeModulePkg/Universal/LoadFileOnFv2/LoadFileOnFv2.inf
         VERSION  STRING="$(INF_VERSION)" Optional BUILD_NUM=$(BUILD_NUMBER)
       }
     }
+  }
+
+[Rule.Common.USER_DEFINED.ACPI]
+  FILE FREEFORM = $(NAMED_GUID) {
+    RAW ACPI  Optional            |.acpi
   }

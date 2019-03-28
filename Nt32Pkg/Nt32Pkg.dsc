@@ -551,6 +551,7 @@
   TestPkg/Application/TestDevicePathApp/TestDevicePathApp.inf
   TestPkg/Application/TestFileIoApp/TestFileIoApp.inf
   TestPkg/Application/TestPcdApp/TestPcdApp.inf
+  TestPkg/Application/TestAslc/TestAslc.inf
 
 ###################################################################################################
 #

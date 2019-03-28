@@ -1,0 +1,44 @@
+/** @file
+  Test Aslc
+  Self Study usage.
+
+**/
+
+#include "TestAslc.h"
+
+#define HEADER \
+    TEST_ASLC_HEADER_SIGNATURE,\
+    sizeof (TEST_ASLC_TYPE),\
+    EFI_ACPI_2_0_FIXED_ACPI_DESCRIPTION_TABLE_REVISION,\
+    0,                         \
+    {TEST_ASLC_OEM_ID},        \
+    TEST_ASLC_OEM_TABLE_ID,    \
+    TEST_ASLC_OEM_REVISION,     \
+    TEST_ASLC_CREATOR_ID,      \
+    TEST_ASLC_CREATOR_REVISION  
+
+
+TEST_ASLC_TYPE FOO = {
+  { HEADER },
+  {
+    { "abcdefg", 0x5a5a5a5a, TEST_ASLC_GUID  },
+    { "abcdefg", 0x2b2b2b2b, TEST_ASLC_GUID  },
+    { "abcdefg", 0x5a5a5a5a, TEST_ASLC_GUID  },
+    { "abcdefg", 0x2b2b2b2b, TEST_ASLC_GUID  },
+    { "abcdefg", 0x5a5a5a5a, TEST_ASLC_GUID  },
+    { "abcdefg", 0x2b2b2b2b, TEST_ASLC_GUID  },
+  }
+};
+
+
+VOID*
+ReferenceAcpiTable (
+  VOID
+  )
+{
+  //
+  // Reference the table being generated to prevent the optimizer from removing the
+  // data structure from the exeutable
+  //
+  return (VOID*)&FOO;
+}
