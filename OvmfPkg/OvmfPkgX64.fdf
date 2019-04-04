@@ -392,6 +392,9 @@ INF  MdeModulePkg/Universal/Variable/RuntimeDxe/VariableRuntimeDxe.inf
 INF  SecurityPkg/Tcg/Tcg2Dxe/Tcg2Dxe.inf
 !endif
 
+#TODO: self added
+#INF  TestPkg/Application/TestPcdApp/TestPcdApp.inf
+INF RuleOverride = ACPI TestPkg/Application/TestAslc/TestAslc.inf
 ################################################################################
 
 [FV.FVMAIN_COMPACT]
@@ -535,4 +538,9 @@ FILE FV_IMAGE = 9E21FD93-9C72-4c15-8C4B-E77F1DB2D792 {
     PE32     PE32                    $(INF_OUTPUT)/$(MODULE_NAME).efi
     UI       STRING="$(MODULE_NAME)" Optional
     VERSION  STRING="$(INF_VERSION)" Optional BUILD_NUM=$(BUILD_NUMBER)
+  }
+
+[Rule.Common.USER_DEFINED.ACPI]
+  FILE FREEFORM = $(NAMED_GUID) {
+    RAW ACPI  Optional            |.acpi
   }

@@ -22,7 +22,7 @@ TestGetMemoryMap ( VOID )
   EFI_MEMORY_DESCRIPTOR *MMap;
   UINTN                  MapKey;
   UINTN                  DescriptorSize;
-  UINTN                  DescriptorVersion;
+  UINT32                 DescriptorVersion;
   UINTN                  i;
   BOOLEAN                Allocated;
 
@@ -52,7 +52,7 @@ TestGetMemoryMap ( VOID )
   if (Status == EFI_BUFFER_TOO_SMALL){
     DEBUG((EFI_D_ERROR, "EFI_BUFFER_TOO_SMALL\n"));
     // AllocatePool
-    Status = gBS->AllocatePool(EfiBootServicesData, MemoryMapSize, &MemoryMap);
+    Status = gBS->AllocatePool(EfiBootServicesData, MemoryMapSize, (VOID **)&MemoryMap);
     // Call GetMemoryMap
     Status = gBS->GetMemoryMap(
                     &MemoryMapSize,

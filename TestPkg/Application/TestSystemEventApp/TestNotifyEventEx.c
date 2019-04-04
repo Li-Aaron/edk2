@@ -54,5 +54,5 @@ TestNotifyEventEx( VOID )
   Status = gBS->CloseEvent(MyEvent[2]);
   Status = gBS->CloseEvent(MyEvent[3]);
 
-  return EFI_SUCCESS;
+  return Status;
 }

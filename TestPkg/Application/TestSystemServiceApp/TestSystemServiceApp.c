@@ -28,7 +28,7 @@ UefiMain (
   EFI_MEMORY_DESCRIPTOR *MemoryMap;      // A pointer to the buffer in which firmware places the current memory map.
   UINTN                  MapKey;
   UINTN                  DescriptorSize;
-  UINTN                  DescriptorVersion;
+  UINT32                 DescriptorVersion;
 
   MemoryMapSize     = 0;
   MemoryMap         = NULL;
@@ -63,9 +63,9 @@ UefiMain (
   //
   // Exit Boot Service
   //
-  _asm int 3
+  //_asm int 3
   Status = gBS->ExitBootServices(ImageHandle, MapKey);
-  _asm int 3
+  //_asm int 3
 
   ASSERT(gST->BootServices == NULL);
 

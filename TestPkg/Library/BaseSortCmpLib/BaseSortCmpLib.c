@@ -6,14 +6,14 @@
 #include "BaseSortCmpLib.h"
 
 SORT_FUNC_WARP mSortFunction[SORT_FUNC_MAX_NUM] = {
-  { L"SortBubble" ,    SortBubble },
-  { L"SortSelect" ,    SortSelect },
-  { L"SortInsert" ,    SortInsert },
-  { L"SortShell"  ,    SortShell  },
-  { L"SortQuick"  ,    SortQuick  },
-  { L"SortQuick2" ,    SortQuick2 },
-  { L"SortMerge"  ,    SortMerge  },
-  { L"SortHeap"   ,    SortHeap   }
+  { L"SortBubble" ,    (SORT_FUNC) SortBubble },
+  { L"SortSelect" ,    (SORT_FUNC) SortSelect },
+  { L"SortInsert" ,    (SORT_FUNC) SortInsert },
+  { L"SortShell"  ,    (SORT_FUNC) SortShell  },
+  { L"SortQuick"  ,    (SORT_FUNC) SortQuick  },
+  { L"SortQuick2" ,    (SORT_FUNC) SortQuick2 },
+  { L"SortMerge"  ,    (SORT_FUNC) SortMerge  },
+  { L"SortHeap"   ,    (SORT_FUNC) SortHeap   }
 };
 
 /**
