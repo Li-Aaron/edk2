@@ -29,7 +29,7 @@ typedef struct {
 
 typedef struct _TEST_ASLC_TYPE {
   EFI_ACPI_DESCRIPTION_HEADER Header;
-  TEST_ASLC_CONTENT           Content[0];
+  TEST_ASLC_CONTENT           Content[];
 } TEST_ASLC_TYPE;
 
 #endif
