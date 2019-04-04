@@ -41,11 +41,9 @@ TestNotifyTimerSignal( VOID )
 {
   EFI_STATUS             Status;
   EFI_EVENT              MyEvent;
-  UINTN                  NumOfEvent;
   UINTN                  Index;
   UINT64                 TriggerTime;
 
-  NumOfEvent = 1;
   TriggerTime = 1 * 1000 * 1000 * 10; // 1s = 1 * 1000 * 1000 * 10 * 100ns
 
   Status = gBS->CreateEvent(EVT_TIMER|EVT_NOTIFY_SIGNAL, TPL_NOTIFY, (EFI_EVENT_NOTIFY)MyEventNotify, (VOID*)L"TIME OUT!", &MyEvent);

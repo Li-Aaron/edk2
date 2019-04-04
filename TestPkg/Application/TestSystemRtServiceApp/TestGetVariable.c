@@ -27,7 +27,7 @@ TestGetVariable( VOID )
 
   BufferSize       = 10240;
 
-  Status = gBS->AllocatePool(EfiBootServicesData, BufferSize, &Buffer);
+  Status = gBS->AllocatePool(EfiBootServicesData, BufferSize, (VOID **)&Buffer);
   if (EFI_ERROR(Status)){
     DEBUG((EFI_D_ERROR, "Status = 0x%x\n", Status));
     return Status;
