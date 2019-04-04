@@ -80,5 +80,5 @@
   gSelfTokenSpaceGuid.PcdTestStructure.D|0x44
   gSelfTokenSpaceGuid.PcdTestStructure.E.Foo|{'%','^','&','a','b','c'}
   gSelfTokenSpaceGuid.PcdTestStructure.Guid|{GUID("d8fe6336-cb0b-4f1d-8719-77e0ea0af98f")}
-  gSelfTokenSpaceGuid.PcdTestStructure.FlexibleArray|"I'm Happy"
+  #gSelfTokenSpaceGuid.PcdTestStructure.FlexibleArray|"I'm Happy"
 

@@ -21,7 +21,7 @@ typedef struct {
     UINT64  Bar;
   } E;
   UINT8    Guid[16];
-  UINT8    FlexibleArray[];
+  //UINT8    FlexibleArray[];
 } TESTPCD;
 #pragma pack()
 
