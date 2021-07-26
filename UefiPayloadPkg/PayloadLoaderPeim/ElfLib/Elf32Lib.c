@@ -164,6 +164,7 @@ ProcessRelocation32 (
           // Calculation: B + A
           //
           if (RelaType == SHT_RELA) {
+            ASSERT (*Ptr == 0);
             *Ptr = (UINT32) Delta + Rela->r_addend;
           } else {
             //
