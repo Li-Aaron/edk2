@@ -46,13 +46,6 @@ def Bytes2Val(Bytes):
     return reduce(lambda x, y: (x << 8) | y, Bytes[::-1])
 
 
-def Str2Bytes(Value, Blen):
-    Result = bytearray(Value[1:-1], 'utf-8')  # Excluding quotes
-    if len(Result) < Blen:
-        Result.extend(b'\x00' * (Blen - len(Result)))
-    return Result
-
-
 class CFspBsf2Dsc:
 
     def __init__(self, bsf_file):
@@ -115,8 +108,7 @@ class CFspBsf2Dsc:
                 cfg_item['find'] = prefix
                 cfg_item['cname'] = 'Signature'
                 cfg_item['length'] = len(finds[0][1])
-                str2byte = Str2Bytes("'" + finds[0][1] + "'", len(finds[0][1]))
-                cfg_item['value'] = '0x%X' % Bytes2Val(str2byte)
+                cfg_item['value'] = '0x%X' % Bytes2Val(finds[0][1].encode('UTF-8'))
                 cfg_list.append(dict(cfg_item))
                 cfg_item = dict(cfg_temp)
                 find_list.pop(0)
@@ -299,6 +291,7 @@ class CFspDsc2Yaml():
                 raise Exception('DSC variable creation error !')
         else:
             raise Exception('Unsupported file "%s" !' % file_name)
+        gen_cfg_data.UpdateDefaultValue()
         self.gen_cfg_data = gen_cfg_data
 
     def print_dsc_line(self):
