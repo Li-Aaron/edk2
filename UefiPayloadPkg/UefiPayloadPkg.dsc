@@ -335,11 +335,11 @@
 
 ################################################################################
 #
-# Pcd DynamicEx Section - list of all EDK II PCD Entries defined by this Platform
+# Pcd Dynamic Section - list of all EDK II PCD Entries defined by this Platform
 #
 ################################################################################
 
-[PcdsDynamicExDefault]
+[PcdsDynamicDefault]
   gEfiMdeModulePkgTokenSpaceGuid.PcdEmuVariableNvStoreReserved|0
   gEfiMdeModulePkgTokenSpaceGuid.PcdFlashNvStorageVariableBase64|0
   gEfiMdeModulePkgTokenSpaceGuid.PcdFlashNvStorageFtwWorkingBase|0
@@ -362,9 +362,6 @@
   gEfiMdeModulePkgTokenSpaceGuid.PcdConOutColumn|100
   gEfiMdePkgTokenSpaceGuid.PcdPciExpressBaseAddress|0
   gEfiMdePkgTokenSpaceGuid.PcdPciExpressBaseSize|0
-  gEfiMdeModulePkgTokenSpaceGuid.PcdGhcbBase|0
-  gEfiMdeModulePkgTokenSpaceGuid.PcdTestKeyUsed|FALSE
-  gUefiCpuPkgTokenSpaceGuid.PcdSevEsIsEnabled|0
   gEfiMdeModulePkgTokenSpaceGuid.PcdPciDisableBusEnumeration|TRUE
 
 ################################################################################
