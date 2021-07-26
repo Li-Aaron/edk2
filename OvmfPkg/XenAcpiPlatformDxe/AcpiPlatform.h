@@ -21,6 +21,20 @@ InstallAcpiTable (
   OUT  UINTN                         *TableKey
   );
 
+BOOLEAN
+QemuDetected (
+  VOID
+  );
+
+EFI_STATUS
+EFIAPI
+QemuInstallAcpiTable (
+  IN   EFI_ACPI_TABLE_PROTOCOL       *AcpiProtocol,
+  IN   VOID                          *AcpiTableBuffer,
+  IN   UINTN                         AcpiTableBufferSize,
+  OUT  UINTN                         *TableKey
+  );
+
 EFI_STATUS
 EFIAPI
 InstallXenTables (
