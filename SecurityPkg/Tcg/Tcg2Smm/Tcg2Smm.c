@@ -253,8 +253,6 @@ TcgMmReadyToLock (
 {
   EFI_STATUS Status;
 
-  Status = EFI_SUCCESS;
-
   if (mReadyToLockHandle != NULL) {
     Status = gMmst->MmiHandlerUnRegister (mReadyToLockHandle);
     mReadyToLockHandle = NULL;
