@@ -27,7 +27,6 @@
   Qemu.c
   SmbiosPlatformDxe.c
   SmbiosPlatformDxe.h
-  XenSmbiosPlatformDxe.h
 
 [Sources.IA32, Sources.X64]
   X86Xen.c
