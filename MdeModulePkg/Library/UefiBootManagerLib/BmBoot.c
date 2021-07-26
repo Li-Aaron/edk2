@@ -2405,9 +2405,13 @@ BmRegisterBootManagerMenu (
   CHAR16                             *Description;
   UINTN                              DescriptionLength;
   EFI_DEVICE_PATH_PROTOCOL           *DevicePath;
+  EFI_LOADED_IMAGE_PROTOCOL          *LoadedImage;
+  MEDIA_FW_VOL_FILEPATH_DEVICE_PATH  FileNode;
   UINTN                              HandleCount;
   EFI_HANDLE                         *Handles;
   UINTN                              Index;
+  VOID                               *Data;
+  UINTN                              DataSize;
 
   DevicePath = NULL;
   Description = NULL;
@@ -2433,17 +2437,22 @@ BmRegisterBootManagerMenu (
   }
 
   if (DevicePath == NULL) {
-    Status = GetFileDevicePathFromAnyFv (
+    Data = NULL;
+    Status = GetSectionFromAnyFv (
                PcdGetPtr (PcdBootManagerMenuFile),
                EFI_SECTION_PE32,
                0,
-               &DevicePath
+               (VOID **) &Data,
+               &DataSize
                );
+    if (Data != NULL) {
+      FreePool (Data);
+    }
     if (EFI_ERROR (Status)) {
       DEBUG ((EFI_D_WARN, "[Bds]BootManagerMenu FFS section can not be found, skip its boot option registration\n"));
       return EFI_NOT_FOUND;
     }
-    ASSERT (DevicePath != NULL);
+
     //
     // Get BootManagerMenu application's description from EFI User Interface Section.
     //
@@ -2457,6 +2466,19 @@ BmRegisterBootManagerMenu (
     if (EFI_ERROR (Status)) {
       Description = NULL;
     }
+
+    EfiInitializeFwVolDevicepathNode (&FileNode, PcdGetPtr (PcdBootManagerMenuFile));
+    Status = gBS->HandleProtocol (
+                    gImageHandle,
+                    &gEfiLoadedImageProtocolGuid,
+                    (VOID **) &LoadedImage
+                    );
+    ASSERT_EFI_ERROR (Status);
+    DevicePath = AppendDevicePathNode (
+                   DevicePathFromHandle (LoadedImage->DeviceHandle),
+                   (EFI_DEVICE_PATH_PROTOCOL *) &FileNode
+                   );
+    ASSERT (DevicePath != NULL);
   }
 
   Status = EfiBootManagerInitializeLoadOption (
