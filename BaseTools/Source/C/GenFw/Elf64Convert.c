@@ -246,8 +246,7 @@ IsTextShdr (
   Elf_Shdr *Shdr
   )
 {
-  return (BOOLEAN) (((Shdr->sh_flags & (SHF_EXECINSTR | SHF_ALLOC)) == (SHF_EXECINSTR | SHF_ALLOC)) ||
-                   ((Shdr->sh_flags & (SHF_WRITE | SHF_ALLOC)) == SHF_ALLOC));
+  return (BOOLEAN) ((Shdr->sh_flags & (SHF_EXECINSTR | SHF_ALLOC)) == (SHF_EXECINSTR | SHF_ALLOC));
 }
 
 STATIC
