@@ -18,5 +18,4 @@
   RedfishPkg/RedfishRestExDxe/RedfishRestExDxe.inf
   RedfishPkg/RedfishCredentialDxe/RedfishCredentialDxe.inf
   RedfishPkg/RedfishDiscoverDxe/RedfishDiscoverDxe.inf
-  RedfishPkg/RedfishConfigHandler/RedfishConfigHandlerDriver.inf
 !endif
