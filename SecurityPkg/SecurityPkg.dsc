@@ -259,12 +259,6 @@
 [Components.IA32, Components.X64, Components.ARM, Components.AARCH64]
   SecurityPkg/Library/AuthVariableLib/AuthVariableLib.inf
 
-[Components.IA32, Components.X64, Components.AARCH64]
-  #
-  # Random Number Generator
-  #
-  SecurityPkg/RandomNumberGenerator/RngDxe/RngDxe.inf
-
 [Components.IA32, Components.X64]
   SecurityPkg/VariableAuthenticated/SecureBootConfigDxe/SecureBootConfigDxe.inf
 
@@ -339,6 +333,11 @@
   SecurityPkg/Tcg/Tcg2Acpi/Tcg2Acpi.inf
   SecurityPkg/Library/SmmTcg2PhysicalPresenceLib/SmmTcg2PhysicalPresenceLib.inf
   SecurityPkg/Library/SmmTcg2PhysicalPresenceLib/StandaloneMmTcg2PhysicalPresenceLib.inf
+
+  #
+  # Random Number Generator
+  #
+  SecurityPkg/RandomNumberGenerator/RngDxe/RngDxe.inf
 
   #
   # Opal Password solution
