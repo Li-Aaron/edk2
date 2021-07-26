@@ -290,15 +290,11 @@ IScsiCHAPOnRspReceived (
 
     AuthData->InIdentifier      = (UINT32) Result;
     AuthData->InChallengeLength = (UINT32) sizeof (AuthData->InChallenge);
-    Status = IScsiHexToBin (
-               (UINT8 *) AuthData->InChallenge,
-               &AuthData->InChallengeLength,
-               Challenge
-               );
-    if (EFI_ERROR (Status)) {
-      Status = EFI_PROTOCOL_ERROR;
-      goto ON_EXIT;
-    }
+    IScsiHexToBin (
+      (UINT8 *) AuthData->InChallenge,
+      &AuthData->InChallengeLength,
+      Challenge
+      );
     Status = IScsiCHAPCalculateResponse (
                AuthData->InIdentifier,
                AuthData->AuthConfig->CHAPSecret,
@@ -341,11 +337,7 @@ IScsiCHAPOnRspReceived (
     }
 
     RspLen = ISCSI_CHAP_RSP_LEN;
-    Status = IScsiHexToBin (TargetRsp, &RspLen, Response);
-    if (EFI_ERROR (Status) || RspLen != ISCSI_CHAP_RSP_LEN) {
-      Status = EFI_PROTOCOL_ERROR;
-      goto ON_EXIT;
-    }
+    IScsiHexToBin (TargetRsp, &RspLen, Response);
 
     //
     // Check the CHAP Name and Response replied by Target.
