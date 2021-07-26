@@ -50,7 +50,6 @@ class Settings(CiBuildSettingsManager, UpdateSettingsManager, SetupSettingsManag
         These should be edk2 workspace relative paths '''
 
         return ("ArmPkg",
-                "ArmPlatformPkg",
                 "ArmVirtPkg",
                 "DynamicTablesPkg",
                 "EmulatorPkg",
