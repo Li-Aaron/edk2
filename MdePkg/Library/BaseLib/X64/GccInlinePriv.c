@@ -2,7 +2,7 @@
   GCC inline implementation of BaseLib processor specific functions that use
   privlidged instructions.
 
-  Copyright (c) 2006 - 2021, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2006 - 2020, Intel Corporation. All rights reserved.<BR>
   Portions copyright (c) 2008 - 2009, Apple Inc. All rights reserved.<BR>
   SPDX-License-Identifier: BSD-2-Clause-Patent
 
@@ -10,7 +10,6 @@
 
 
 #include "BaseLibInternals.h"
-#include <Library/RegisterFilterLib.h>
 
 /**
   Enables CPU interrupts.
@@ -65,20 +64,13 @@ AsmReadMsr64 (
 {
   UINT32 LowData;
   UINT32 HighData;
-  UINT64 Value;
-  BOOLEAN Flag;
 
-  Flag = FilterBeforeMsrRead (Index, &Value);
-  if (Flag) {
-    __asm__ __volatile__ (
-      "rdmsr"
-      : "=a" (LowData),   // %0
-        "=d" (HighData)   // %1
-      : "c"  (Index)      // %2
-      );
-    Value = (((UINT64)HighData) << 32) | LowData;
-  }
-  FilterAfterMsrRead (Index, &Value);
+  __asm__ __volatile__ (
+    "rdmsr"
+    : "=a" (LowData),   // %0
+      "=d" (HighData)   // %1
+    : "c"  (Index)      // %2
+    );
 
   return (((UINT64)HighData) << 32) | LowData;
 }
@@ -109,22 +101,17 @@ AsmWriteMsr64 (
 {
   UINT32 LowData;
   UINT32 HighData;
-  BOOLEAN Flag;
 
   LowData  = (UINT32)(Value);
   HighData = (UINT32)(Value >> 32);
 
-  Flag = FilterBeforeMsrWrite (Index, &Value);
-  if (Flag) {
-    __asm__ __volatile__ (
-      "wrmsr"
-      :
-      : "c" (Index),
-        "a" (LowData),
-        "d" (HighData)
-      );
-  }
-  FilterAfterMsrWrite (Index, &Value);
+  __asm__ __volatile__ (
+    "wrmsr"
+    :
+    : "c" (Index),
+      "a" (LowData),
+      "d" (HighData)
+    );
 
   return Value;
 }
