@@ -24,8 +24,11 @@
 [Sources]
   AcpiPlatform.c
   AcpiPlatform.h
+  BootScript.c
   EntryPoint.c
+  PciDecoding.c
   Qemu.c
+  QemuFwCfgAcpi.c
   Xen.c
 
 [Packages]
@@ -40,8 +43,10 @@
   DebugLib
   DxeServicesTableLib
   MemoryAllocationLib
+  OrderedCollectionLib
   PcdLib
   QemuFwCfgLib
+  QemuFwCfgS3Lib
   UefiBootServicesTableLib
   UefiDriverEntryPoint
   XenPlatformLib
@@ -49,6 +54,7 @@
 [Protocols]
   gEfiAcpiTableProtocolGuid                     # PROTOCOL ALWAYS_CONSUMED
   gEfiFirmwareVolume2ProtocolGuid               # PROTOCOL SOMETIMES_CONSUMED
+  gEfiPciIoProtocolGuid                         # PROTOCOL SOMETIMES_CONSUMED
 
 [Guids]
   gRootBridgesConnectedEventGroupGuid
