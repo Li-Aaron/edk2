@@ -52,7 +52,6 @@
   DebugLib
   HobLib
   IoLib
-  LocalApicLib
   PciLib
   ResourcePublicationLib
   PeiServicesLib
@@ -60,7 +59,6 @@
   MtrrLib
   MemEncryptSevLib
   PcdLib
-  SafeIntLib
   XenHypercallLib
 
 [Pcd]
