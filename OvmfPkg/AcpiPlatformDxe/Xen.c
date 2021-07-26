@@ -8,9 +8,7 @@
 
 **/
 
-#include <Library/BaseLib.h>        // CpuDeadLoop()
-#include <Library/DebugLib.h>       // DEBUG()
-#include <Library/XenPlatformLib.h> // XenGetInfoHOB()
+#include <Library/BaseLib.h>
 
 #include "AcpiPlatform.h"
 

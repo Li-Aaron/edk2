@@ -35,11 +35,9 @@
 
 [LibraryClasses]
   BaseLib
-  BaseMemoryLib
   DebugLib
   MemoryAllocationLib
   OrderedCollectionLib
-  PcdLib
   QemuFwCfgLib
   QemuFwCfgS3Lib
   UefiBootServicesTableLib
