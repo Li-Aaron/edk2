@@ -69,9 +69,9 @@ BaseGetTotalProtocols (
 
 /** Common function which returns vendor details.
 
-  @param[in] MessageId       ScmiMessageIdBaseDiscoverVendor
+  @param[in] MessageId       SCMI_MESSAGE_ID_BASE_DISCOVER_VENDOR
                              OR
-                             ScmiMessageIdBaseDiscoverSubVendor
+                             SCMI_MESSAGE_ID_BASE_DISCOVER_SUB_VENDOR
 
   @param[out] VendorIdentifier ASCII name of the vendor/subvendor.
 
@@ -133,7 +133,7 @@ BaseDiscoverVendor (
   )
 {
   return BaseDiscoverVendorDetails (
-           ScmiMessageIdBaseDiscoverVendor,
+           SCMI_MESSAGE_ID_BASE_DISCOVER_VENDOR,
            VendorIdentifier
            );
 }
@@ -156,7 +156,7 @@ BaseDiscoverSubVendor (
   )
 {
   return BaseDiscoverVendorDetails (
-           ScmiMessageIdBaseDiscoverSubVendor,
+           SCMI_MESSAGE_ID_BASE_DISCOVER_SUB_VENDOR,
            VendorIdentifier
            );
 }
@@ -184,7 +184,7 @@ BaseDiscoverImplVersion (
   UINT32        PayloadLength;
 
   Cmd.ProtocolId = ScmiProtocolIdBase;
-  Cmd.MessageId  = ScmiMessageIdBaseDiscoverImplementationVersion;
+  Cmd.MessageId  = SCMI_MESSAGE_ID_BASE_DISCOVER_IMPLEMENTATION_VERSION;
 
   PayloadLength = 0;
 
@@ -251,7 +251,7 @@ BaseDiscoverListProtocols (
   }
 
   Cmd.ProtocolId = ScmiProtocolIdBase;
-  Cmd.MessageId  = ScmiMessageIdBaseDiscoverListProtocols;
+  Cmd.MessageId  = SCMI_MESSAGE_ID_BASE_DISCOVER_LIST_PROTOCOLS;
 
   Skip = 0;
 
