@@ -7,10 +7,10 @@
 
 **/
 
-#ifndef QEMU_LOADER_H_
-#define QEMU_LOADER_H_
+#ifndef __QEMU_LOADER_H__
+#define __QEMU_LOADER_H__
 
-#include <Base.h>
+#include <Include/Base.h>
 #include <Library/QemuFwCfgLib.h>
 
 //

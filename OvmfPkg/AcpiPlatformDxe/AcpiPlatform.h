@@ -1,13 +1,13 @@
 /** @file
-  OVMF ACPI Platform Driver
+  Sample ACPI Platform Driver
 
   Copyright (c) 2008 - 2012, Intel Corporation. All rights reserved.<BR>
   SPDX-License-Identifier: BSD-2-Clause-Patent
 
 **/
 
-#ifndef ACPI_PLATFORM_H_
-#define ACPI_PLATFORM_H_
+#ifndef _ACPI_PLATFORM_H_INCLUDED_
+#define _ACPI_PLATFORM_H_INCLUDED_
 
 #include <PiDxe.h>
 
