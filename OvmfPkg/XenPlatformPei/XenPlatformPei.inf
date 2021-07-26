@@ -66,7 +66,6 @@
   gUefiOvmfPkgTokenSpaceGuid.PcdOvmfPeiMemFvSize
   gUefiOvmfPkgTokenSpaceGuid.PcdOvmfDxeMemFvBase
   gUefiOvmfPkgTokenSpaceGuid.PcdOvmfDxeMemFvSize
-  gUefiOvmfPkgTokenSpaceGuid.PcdOvmfSecPageTablesBase
   gUefiOvmfPkgTokenSpaceGuid.PcdOvmfLockBoxStorageBase
   gUefiOvmfPkgTokenSpaceGuid.PcdOvmfLockBoxStorageSize
   gUefiOvmfPkgTokenSpaceGuid.PcdOvmfHostBridgePciDevId
