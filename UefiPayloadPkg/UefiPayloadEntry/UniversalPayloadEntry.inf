@@ -63,7 +63,6 @@
   gEfiAcpiTableGuid
   gUefiSerialPortInfoGuid
   gUniversalPayloadExtraDataGuid
-  gPcdDataBaseHobGuid
 
 [FeaturePcd.IA32]
   gEfiMdeModulePkgTokenSpaceGuid.PcdDxeIplSwitchToLongMode      ## CONSUMES
@@ -73,7 +72,6 @@
 
 
 [Pcd.IA32,Pcd.X64]
-  gUefiPayloadPkgTokenSpaceGuid.PcdPcdDriverFile
   gEfiMdeModulePkgTokenSpaceGuid.PcdUse1GPageTable                      ## SOMETIMES_CONSUMES
   gEfiMdeModulePkgTokenSpaceGuid.PcdPteMemoryEncryptionAddressOrMask    ## CONSUMES
   gEfiMdeModulePkgTokenSpaceGuid.PcdNullPointerDetectionPropertyMask    ## CONSUMES
