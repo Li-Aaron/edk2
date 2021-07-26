@@ -192,7 +192,6 @@ SmbiosTablePublishEntry (
     return Status;
   }
 
-  Status = EFI_NOT_FOUND;
   //
   // Add Xen or QEMU SMBIOS data if found
   //
