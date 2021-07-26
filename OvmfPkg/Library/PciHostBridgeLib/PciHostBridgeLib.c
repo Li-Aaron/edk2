@@ -16,6 +16,8 @@
 #include <Protocol/PciHostBridgeResourceAllocation.h> // EFI_PCI_HOST_BRIDGE...
 #include <Protocol/PciRootBridgeIo.h>                 // EFI_PCI_ATTRIBUTE_I...
 
+#include "PciHostBridge.h"
+
 STATIC PCI_ROOT_BRIDGE_APERTURE mNonExistAperture = { MAX_UINT64, 0 };
 
 
@@ -39,6 +41,10 @@ PciHostBridgeGetRootBridges (
   PCI_ROOT_BRIDGE_APERTURE Io;
   PCI_ROOT_BRIDGE_APERTURE Mem;
   PCI_ROOT_BRIDGE_APERTURE MemAbove4G;
+
+  if (PcdGetBool (PcdPciDisableBusEnumeration)) {
+    return ScanForRootBridges (Count);
+  }
 
   ZeroMem (&Io, sizeof (Io));
   ZeroMem (&Mem, sizeof (Mem));
