@@ -911,7 +911,7 @@ AsmReadSs (
   UINT16  Data;
 
   __asm__ __volatile__ (
-    "mov  %%ss, %0"
+    "mov  %%ds, %0"
     :"=a" (Data)
     );
 
