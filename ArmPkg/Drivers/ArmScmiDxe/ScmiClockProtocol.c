@@ -123,7 +123,7 @@ ClockGetClockAttributes (
   *MessageParams = ClockId;
 
   Cmd.ProtocolId = ScmiProtocolIdClock;
-  Cmd.MessageId  = ScmiMessageIdClockAttributes;
+  Cmd.MessageId  = SCMI_MESSAGE_ID_CLOCK_ATTRIBUTES;
 
   PayloadLength = sizeof (ClockId);
 
@@ -204,7 +204,7 @@ ClockDescribeRates (
   }
 
   Cmd.ProtocolId = ScmiProtocolIdClock;
-  Cmd.MessageId  = ScmiMessageIdClockDescribeRates;
+  Cmd.MessageId  = SCMI_MESSAGE_ID_CLOCK_DESCRIBE_RATES;
 
   *MessageParams++  = ClockId;
 
@@ -321,7 +321,7 @@ ClockRateGet (
   *MessageParams  = ClockId;
 
   Cmd.ProtocolId  = ScmiProtocolIdClock;
-  Cmd.MessageId   = ScmiMessageIdClockRateGet;
+  Cmd.MessageId   = SCMI_MESSAGE_ID_CLOCK_RATE_GET;
 
   PayloadLength = sizeof (ClockId);
 
@@ -375,7 +375,7 @@ ClockRateSet (
   ClockRateSetAttributes->Rate.High  = (UINT32)(Rate >> 32);
 
   Cmd.ProtocolId = ScmiProtocolIdClock;
-  Cmd.MessageId  = ScmiMessageIdClockRateSet;
+  Cmd.MessageId  = SCMI_MESSAGE_ID_CLOCK_RATE_SET;
 
   PayloadLength = sizeof (CLOCK_RATE_SET_ATTRIBUTES);
 
@@ -422,7 +422,7 @@ ClockEnable (
   ClockConfigSetAttributes->Attributes = Enable ? BIT0 : 0;
 
   Cmd.ProtocolId = ScmiProtocolIdClock;
-  Cmd.MessageId  = ScmiMessageIdClockConfigSet;
+  Cmd.MessageId  = SCMI_MESSAGE_ID_CLOCK_CONFIG_SET;
 
   PayloadLength = sizeof (CLOCK_CONFIG_SET_ATTRIBUTES);
 
