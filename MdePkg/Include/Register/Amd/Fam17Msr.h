@@ -87,12 +87,7 @@ typedef union {
     ///
     UINT32  SevEsBit:1;
 
-    ///
-    /// [Bit 2] Secure Nested Paging (SevSnp) is enabled
-    ///
-    UINT32  SevSnpBit:1;
-
-    UINT32  Reserved2:29;
+    UINT32  Reserved:30;
   } Bits;
   ///
   /// All bit fields as a 32-bit value
