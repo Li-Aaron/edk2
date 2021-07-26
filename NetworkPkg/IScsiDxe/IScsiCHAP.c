@@ -391,7 +391,6 @@ IScsiCHAPToSendReq (
   UINT32                      RspLen;
   CHAR8                       *Challenge;
   UINT32                      ChallengeLen;
-  EFI_STATUS                  BinToHexStatus;
 
   ASSERT (Conn->CurrentStage == ISCSI_SECURITY_NEGOTIATION);
 
@@ -472,13 +471,12 @@ IScsiCHAPToSendReq (
     //
     // CHAP_R=<R>
     //
-    BinToHexStatus = IScsiBinToHex (
-                       (UINT8 *) AuthData->CHAPResponse,
-                       ISCSI_CHAP_RSP_LEN,
-                       Response,
-                       &RspLen
-                       );
-    ASSERT_EFI_ERROR (BinToHexStatus);
+    IScsiBinToHex (
+      (UINT8 *) AuthData->CHAPResponse,
+      ISCSI_CHAP_RSP_LEN,
+      Response,
+      &RspLen
+      );
     IScsiAddKeyValuePair (Pdu, ISCSI_KEY_CHAP_RESPONSE, Response);
 
     if (AuthData->AuthConfig->CHAPType == ISCSI_CHAP_MUTUAL) {
@@ -492,13 +490,12 @@ IScsiCHAPToSendReq (
       // CHAP_C=<C>
       //
       IScsiGenRandom ((UINT8 *) AuthData->OutChallenge, ISCSI_CHAP_RSP_LEN);
-      BinToHexStatus = IScsiBinToHex (
-                         (UINT8 *) AuthData->OutChallenge,
-                         ISCSI_CHAP_RSP_LEN,
-                         Challenge,
-                         &ChallengeLen
-                         );
-      ASSERT_EFI_ERROR (BinToHexStatus);
+      IScsiBinToHex (
+        (UINT8 *) AuthData->OutChallenge,
+        ISCSI_CHAP_RSP_LEN,
+        Challenge,
+        &ChallengeLen
+        );
       IScsiAddKeyValuePair (Pdu, ISCSI_KEY_CHAP_CHALLENGE, Challenge);
 
       Conn->AuthStep = ISCSI_CHAP_STEP_FOUR;
