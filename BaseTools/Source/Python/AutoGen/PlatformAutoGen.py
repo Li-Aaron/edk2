@@ -918,13 +918,14 @@ class PlatformAutoGen(AutoGen):
                 if Tool in self._BuildOptionWithToolDef(RetVal) and Attr in self._BuildOptionWithToolDef(RetVal)[Tool]:
                     # check if override is indicated
                     if self._BuildOptionWithToolDef(RetVal)[Tool][Attr].startswith('='):
-                        Value = self._BuildOptionWithToolDef(RetVal)[Tool][Attr][1:].strip()
+                        Value = self._BuildOptionWithToolDef(RetVal)[Tool][Attr][1:]
                     else:
-                        # Do not append PATH or GUID
-                        if Attr != 'PATH' and Attr != 'GUID':
+                        if Attr != 'PATH':
                             Value += " " + self._BuildOptionWithToolDef(RetVal)[Tool][Attr]
                         else:
                             Value = self._BuildOptionWithToolDef(RetVal)[Tool][Attr]
+                            Def = '_'.join([self.BuildTarget, self.ToolChain, self.Arch, Tool, Attr])
+                            self.Workspace.ToolDef.ToolsDefTxtDictionary[Def] = Value
                 if Attr == "PATH":
                     # Don't put MAKE definition in the file
                     if Tool != "MAKE":
