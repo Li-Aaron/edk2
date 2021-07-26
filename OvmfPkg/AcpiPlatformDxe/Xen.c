@@ -8,9 +8,8 @@
 
 **/
 
-#include <Library/BaseLib.h>
-
 #include "AcpiPlatform.h"
+#include <Library/BaseLib.h>
 
 #define XEN_ACPI_PHYSICAL_ADDRESS         0x000EA020
 #define XEN_BIOS_PHYSICAL_END             0x000FFFFF
