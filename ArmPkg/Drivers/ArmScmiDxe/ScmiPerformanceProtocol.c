@@ -108,7 +108,7 @@ PerformanceDomainAttributes (
   *MessageParams = DomainId;
 
   Cmd.ProtocolId = ScmiProtocolIdPerformance;
-  Cmd.MessageId  = ScmiMessageIdPerformanceDomainAttributes;
+  Cmd.MessageId  = SCMI_MESSAGE_ID_PERFORMANCE_DOMAIN_ATTRIBUTES;
 
   PayloadLength = sizeof (DomainId);
 
@@ -180,7 +180,7 @@ PerformanceDescribeLevels (
   *MessageParams++ = DomainId;
 
   Cmd.ProtocolId = ScmiProtocolIdPerformance;
-  Cmd.MessageId  = ScmiMessageIdPerformanceDescribeLevels;
+  Cmd.MessageId  = SCMI_MESSAGE_ID_PERFORMANCE_DESCRIBE_LEVELS;
 
   do {
 
@@ -259,7 +259,7 @@ PerformanceLimitsSet (
   *MessageParams   = Limits->RangeMin;
 
   Cmd.ProtocolId = ScmiProtocolIdPerformance;
-  Cmd.MessageId  = ScmiMessageIdPerformanceLimitsSet;
+  Cmd.MessageId  = SCMI_MESSAGE_ID_PERFORMANCE_LIMITS_SET;
 
   PayloadLength = sizeof (DomainId) + sizeof (SCMI_PERFORMANCE_LIMITS);
 
@@ -305,7 +305,7 @@ PerformanceLimitsGet (
   *MessageParams = DomainId;
 
   Cmd.ProtocolId = ScmiProtocolIdPerformance;
-  Cmd.MessageId  = ScmiMessageIdPerformanceLimitsGet;
+  Cmd.MessageId  = SCMI_MESSAGE_ID_PERFORMANCE_LIMITS_GET;
 
   PayloadLength = sizeof (DomainId);
 
@@ -355,7 +355,7 @@ PerformanceLevelSet (
   *MessageParams   = Level;
 
   Cmd.ProtocolId = ScmiProtocolIdPerformance;
-  Cmd.MessageId  = ScmiMessageIdPerformanceLevelSet;
+  Cmd.MessageId  = SCMI_MESSAGE_ID_PERFORMANCE_LEVEL_SET;
 
   PayloadLength = sizeof (DomainId) + sizeof (Level);
 
@@ -400,7 +400,7 @@ PerformanceLevelGet (
   *MessageParams = DomainId;
 
   Cmd.ProtocolId = ScmiProtocolIdPerformance;
-  Cmd.MessageId  = ScmiMessageIdPerformanceLevelGet;
+  Cmd.MessageId  = SCMI_MESSAGE_ID_PERFORMANCE_LEVEL_GET;
 
   PayloadLength = sizeof (DomainId);
 
