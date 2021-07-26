@@ -2300,8 +2300,8 @@ TABLE_ITEM  PMALocationTable[] = {
     L"  PC-98/Local bus add-on card"
   },
   {
-    MemoryArrayLocationCXLAddonCard,
-    L"  CXL add-on card"
+    MemoryArrayLocationCXLFlexbus10AddonCard,
+    L"  CXL Flexbus 1.0 add-on card"
   }
 };
 
@@ -2650,8 +2650,8 @@ TABLE_ITEM  MemoryDeviceMemoryTechnologyTable[] = {
     L" NVDIMM-P"
   },
   {
-    MemoryTechnologyIntelOptanePersistentMemory,
-    L" Intel Optane Persistent Memory"
+    MemoryTechnologyIntelPersistentMemory,
+    L" Intel Optane DC Persistent Memory"
   }
 };
 
