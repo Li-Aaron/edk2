@@ -8,8 +8,8 @@
 
 **/
 
-#ifndef OPTEE_LIB_H_
-#define OPTEE_LIB_H_
+#ifndef _OPTEE_H_
+#define _OPTEE_H_
 
 /*
  * The 'Trusted OS Call UID' is supposed to return the following UUID for
@@ -117,4 +117,4 @@ OpteeInvokeFunction (
   IN OUT OPTEE_INVOKE_FUNCTION_ARG       *InvokeFunctionArg
   );
 
-#endif // OPTEE_LIB_H_
+#endif

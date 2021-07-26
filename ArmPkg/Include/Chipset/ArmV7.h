@@ -7,8 +7,8 @@
 
 **/
 
-#ifndef ARM_V7_H_
-#define ARM_V7_H_
+#ifndef __ARM_V7_H__
+#define __ARM_V7_H__
 
 #include <Chipset/ArmV7Mmu.h>
 
@@ -120,4 +120,4 @@ ArmWriteNsacr (
   IN  UINT32   Nsacr
   );
 
-#endif // ARM_V7_H_
+#endif // __ARM_V7_H__

@@ -7,8 +7,8 @@
 
 **/
 
-#ifndef AARCH64_H_
-#define AARCH64_H_
+#ifndef __AARCH64_H__
+#define __AARCH64_H__
 
 #include <Chipset/AArch64Mmu.h>
 
@@ -238,4 +238,4 @@ ArmWriteCntHctl (
   IN UINT32 CntHctl
   );
 
-#endif // AARCH64_H_
+#endif // __AARCH64_H__

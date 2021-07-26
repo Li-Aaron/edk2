@@ -8,8 +8,8 @@
 
 **/
 
-#ifndef ARM_LIB_PRIVATE_H_
-#define ARM_LIB_PRIVATE_H_
+#ifndef __ARM_LIB_PRIVATE_H__
+#define __ARM_LIB_PRIVATE_H__
 
 #define CACHE_SIZE_4_KB             (3UL)
 #define CACHE_SIZE_8_KB             (4UL)
@@ -186,4 +186,4 @@ ReadCLIDR (
   VOID
   );
 
-#endif // ARM_LIB_PRIVATE_H_
+#endif // __ARM_LIB_PRIVATE_H__

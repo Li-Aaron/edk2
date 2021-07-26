@@ -6,8 +6,8 @@
 *
 **/
 
-#ifndef AARCH64_MMU_H_
-#define AARCH64_MMU_H_
+#ifndef __AARCH64_MMU_H_
+#define __AARCH64_MMU_H_
 
 //
 // Memory Attribute Indirection register Definitions
@@ -194,5 +194,5 @@
 
 // Uses LPAE Page Table format
 
-#endif // AARCH64_MMU_H_
+#endif // __AARCH64_MMU_H_
 
