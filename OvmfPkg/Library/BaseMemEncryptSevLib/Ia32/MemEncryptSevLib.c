@@ -25,6 +25,8 @@
                                       address of a memory region.
   @param[in]  NumPages                The number of pages from start memory
                                       region.
+  @param[in]  Flush                   Flush the caches before clearing the bit
+                                      (mostly TRUE except MMIO addresses)
 
   @retval RETURN_SUCCESS              The attributes were cleared for the
                                       memory region.
@@ -37,7 +39,8 @@ EFIAPI
 MemEncryptSevClearPageEncMask (
   IN PHYSICAL_ADDRESS         Cr3BaseAddress,
   IN PHYSICAL_ADDRESS         BaseAddress,
-  IN UINTN                    NumPages
+  IN UINTN                    NumPages,
+  IN BOOLEAN                  Flush
   )
 {
   //
@@ -56,6 +59,8 @@ MemEncryptSevClearPageEncMask (
                                       address of a memory region.
   @param[in]  NumPages                The number of pages from start memory
                                       region.
+  @param[in]  Flush                   Flush the caches before setting the bit
+                                      (mostly TRUE except MMIO addresses)
 
   @retval RETURN_SUCCESS              The attributes were set for the memory
                                       region.
@@ -68,7 +73,8 @@ EFIAPI
 MemEncryptSevSetPageEncMask (
   IN PHYSICAL_ADDRESS         Cr3BaseAddress,
   IN PHYSICAL_ADDRESS         BaseAddress,
-  IN UINTN                    NumPages
+  IN UINTN                    NumPages,
+  IN BOOLEAN                  Flush
   )
 {
   //

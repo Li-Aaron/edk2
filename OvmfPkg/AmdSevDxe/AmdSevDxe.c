@@ -120,7 +120,8 @@ AmdSevDxeEntryPoint (
     Status = MemEncryptSevClearPageEncMask (
                0,             // Cr3BaseAddress -- use current CR3
                MapPagesBase,  // BaseAddress
-               MapPagesCount  // NumPages
+               MapPagesCount, // NumPages
+               TRUE           // Flush
                );
     if (EFI_ERROR (Status)) {
       DEBUG ((DEBUG_ERROR, "%a: MemEncryptSevClearPageEncMask(): %r\n",
