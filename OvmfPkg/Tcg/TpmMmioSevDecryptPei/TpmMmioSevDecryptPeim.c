@@ -62,10 +62,11 @@ TpmMmioSevDecryptPeimEntryPoint (
       "%a: mapping TPM MMIO address range unencrypted\n",
       __FUNCTION__));
 
-    DecryptStatus = MemEncryptSevClearMmioPageEncMask (
+    DecryptStatus = MemEncryptSevClearPageEncMask (
                       0,
                       FixedPcdGet64 (PcdTpmBaseAddress),
-                      EFI_SIZE_TO_PAGES ((UINTN) 0x5000)
+                      EFI_SIZE_TO_PAGES ((UINTN) 0x5000),
+                      FALSE
                       );
 
     if (RETURN_ERROR (DecryptStatus)) {
