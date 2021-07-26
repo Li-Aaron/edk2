@@ -74,7 +74,6 @@
   MemoryAllocationLib
   NetLib
   PrintLib
-  SafeIntLib
   TcpIoLib
   UefiBootServicesTableLib
   UefiDriverEntryPoint
