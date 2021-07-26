@@ -195,7 +195,7 @@ ScmiGetProtocolVersion (
 
   Status = ScmiProtocolDiscoveryCommon (
              ProtocolId,
-             ScmiMessageIdProtocolVersion,
+             SCMI_MESSAGE_ID_PROTOCOL_VERSION,
              (UINT32**)&ProtocolVersion
              );
   if (EFI_ERROR (Status)) {
@@ -224,7 +224,7 @@ ScmiGetProtocolAttributes (
 {
   return ScmiProtocolDiscoveryCommon (
            ProtocolId,
-           ScmiMessageIdProtocolAttributes,
+           SCMI_MESSAGE_ID_PROTOCOL_ATTRIBUTES,
            ReturnValues
            );
 }
@@ -246,7 +246,7 @@ ScmiGetProtocolMessageAttributes (
 {
   return ScmiProtocolDiscoveryCommon (
            ProtocolId,
-           ScmiMessageIdProtocolMessageAttributes,
+           SCMI_MESSAGE_ID_PROTOCOL_MESSAGE_ATTRIBUTES,
            ReturnValues
            );
 }
