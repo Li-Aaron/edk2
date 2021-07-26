@@ -62,7 +62,6 @@
   gEfiSmbiosTableGuid
   gEfiAcpiTableGuid
   gUefiSerialPortInfoGuid
-  gUniversalPayloadExtraDataGuid
 
 [FeaturePcd.IA32]
   gEfiMdeModulePkgTokenSpaceGuid.PcdDxeIplSwitchToLongMode      ## CONSUMES
