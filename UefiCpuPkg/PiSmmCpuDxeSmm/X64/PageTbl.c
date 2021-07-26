@@ -211,13 +211,11 @@ CalculateMaximumSupportAddress (
 /**
   Set static page table.
 
-  @param[in] PageTable              Address of page table.
-  @param[in] PhysicalAddressBits    The maximum physical address bits supported.
+  @param[in] PageTable     Address of page table.
 **/
 VOID
 SetStaticPageTable (
-  IN UINTN               PageTable,
-  IN UINT8               PhysicalAddressBits
+  IN UINTN               PageTable
   )
 {
   UINT64                                        PageAddress;
@@ -239,26 +237,26 @@ SetStaticPageTable (
   // IA-32e paging translates 48-bit linear addresses to 52-bit physical addresses
   //  when 5-Level Paging is disabled.
   //
-  ASSERT (PhysicalAddressBits <= 52);
-  if (!m5LevelPagingNeeded && PhysicalAddressBits > 48) {
-    PhysicalAddressBits = 48;
+  ASSERT (mPhysicalAddressBits <= 52);
+  if (!m5LevelPagingNeeded && mPhysicalAddressBits > 48) {
+    mPhysicalAddressBits = 48;
   }
 
   NumberOfPml5EntriesNeeded = 1;
-  if (PhysicalAddressBits > 48) {
-    NumberOfPml5EntriesNeeded = (UINTN) LShiftU64 (1, PhysicalAddressBits - 48);
-    PhysicalAddressBits = 48;
+  if (mPhysicalAddressBits > 48) {
+    NumberOfPml5EntriesNeeded = (UINTN) LShiftU64 (1, mPhysicalAddressBits - 48);
+    mPhysicalAddressBits = 48;
   }
 
   NumberOfPml4EntriesNeeded = 1;
-  if (PhysicalAddressBits > 39) {
-    NumberOfPml4EntriesNeeded = (UINTN) LShiftU64 (1, PhysicalAddressBits - 39);
-    PhysicalAddressBits = 39;
+  if (mPhysicalAddressBits > 39) {
+    NumberOfPml4EntriesNeeded = (UINTN) LShiftU64 (1, mPhysicalAddressBits - 39);
+    mPhysicalAddressBits = 39;
   }
 
   NumberOfPdpEntriesNeeded = 1;
-  ASSERT (PhysicalAddressBits > 30);
-  NumberOfPdpEntriesNeeded = (UINTN) LShiftU64 (1, PhysicalAddressBits - 30);
+  ASSERT (mPhysicalAddressBits > 30);
+  NumberOfPdpEntriesNeeded = (UINTN) LShiftU64 (1, mPhysicalAddressBits - 30);
 
   //
   // By architecture only one PageMapLevel4 exists - so lets allocate storage for it.
@@ -440,7 +438,7 @@ SmmInitPageTable (
     // When access to non-SMRAM memory is restricted, create page table
     // that covers all memory space.
     //
-    SetStaticPageTable ((UINTN)PTEntry, mPhysicalAddressBits);
+    SetStaticPageTable ((UINTN)PTEntry);
   } else {
     //
     // Add pages to page pool
