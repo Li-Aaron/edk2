@@ -897,7 +897,6 @@ class Build():
     # $(TARGET), $(TOOLCHAIN), $(TOOLCHAIN_TAG), or $(ARCH) operands.
     #
     def GetToolChainAndFamilyFromDsc (self, File):
-        SavedGlobalDefines = GlobalData.gGlobalDefines.copy()
         for BuildTarget in self.BuildTargetList:
             GlobalData.gGlobalDefines['TARGET'] = BuildTarget
             for BuildToolChain in self.ToolChainList:
@@ -930,7 +929,6 @@ class Build():
                             self.ToolDef.ToolsDefTxtDatabase[TAB_TOD_DEFINES_TOOL_CHAIN_TAG] = []
                         if ToolChain not in self.ToolDef.ToolsDefTxtDatabase[TAB_TOD_DEFINES_TOOL_CHAIN_TAG]:
                             self.ToolDef.ToolsDefTxtDatabase[TAB_TOD_DEFINES_TOOL_CHAIN_TAG].append(ToolChain)
-        GlobalData.gGlobalDefines = SavedGlobalDefines
 
     ## Load configuration
     #
