@@ -6,7 +6,7 @@
 [Defines]
   INF_VERSION                    = 0x00010006
   BASE_NAME                      = TestSystemRtServiceApp
-  FILE_GUID                      = 30757223-bc2c-49b9-b0aa-064e64018f34
+  FILE_GUID                      = 367f9441-59e4-48e2-aa93-fdb6e943b9a5
   MODULE_TYPE                    = UEFI_APPLICATION
   VERSION_STRING                 = 1.0
   ENTRY_POINT                    = UefiMain

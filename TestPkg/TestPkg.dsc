@@ -13,3 +13,25 @@
   BUILD_TARGETS                  = DEBUG|RELEASE|NOOPT
   SKUID_IDENTIFIER               = DEFAULT
 
+[Components]
+  # TODO: self added
+  ShellPkg/Application/ShellHelloApp/ShellHelloApp.inf {
+    <LibraryClasses>
+      ShellCEntryLib|ShellPkg/Library/UefiShellCEntryLib/UefiShellCEntryLib.inf
+  }
+  ShellPkg/Application/ShellSortCmpTestApp/ShellSortCmpTestApp.inf {
+    <LibraryClasses>
+      ShellCEntryLib|ShellPkg/Library/UefiShellCEntryLib/UefiShellCEntryLib.inf
+      SortCmpLib|TestPkg/Library/BaseSortCmpLib/BaseSortCmpLib.inf
+  }
+  TestPkg/Application/HelloApp/HelloApp.inf
+  TestPkg/Application/TestSystemConsoleApp/TestSystemConsoleApp.inf
+  TestPkg/Application/TestSystemServiceApp/TestSystemServiceApp.inf
+  TestPkg/Application/TestSystemRtServiceApp/TestSystemRtServiceApp.inf
+  TestPkg/Application/TestSystemEventApp/TestSystemEventApp.inf
+  TestPkg/Application/TestSystemTimerApp/TestSystemTimerApp.inf
+  TestPkg/Application/TestMouseKeyboardApp/TestMouseKeyboardApp.inf
+  TestPkg/Application/TestDevicePathApp/TestDevicePathApp.inf
+  TestPkg/Application/TestFileIoApp/TestFileIoApp.inf
+  TestPkg/Application/TestPcdApp/TestPcdApp.inf
+  TestPkg/Application/TestAslc/TestAslc.inf

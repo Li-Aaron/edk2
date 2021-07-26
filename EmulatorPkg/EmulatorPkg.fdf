@@ -220,6 +220,22 @@ INF  ShellPkg/DynamicCommand/TftpDynamicCommand/TftpDynamicCommand.inf
 !endif
 INF  ShellPkg/Application/Shell/Shell.inf
 
+
+# TODO: self added
+INF  ShellPkg/Application/ShellHelloApp/ShellHelloApp.inf
+INF  ShellPkg/Application/ShellSortCmpTestApp/ShellSortCmpTestApp.inf
+INF  TestPkg/Application/HelloApp/HelloApp.inf
+INF  TestPkg/Application/TestSystemConsoleApp/TestSystemConsoleApp.inf
+INF  TestPkg/Application/TestSystemServiceApp/TestSystemServiceApp.inf
+INF  TestPkg/Application/TestSystemRtServiceApp/TestSystemRtServiceApp.inf
+INF  TestPkg/Application/TestSystemEventApp/TestSystemEventApp.inf
+INF  TestPkg/Application/TestSystemTimerApp/TestSystemTimerApp.inf
+INF  TestPkg/Application/TestMouseKeyboardApp/TestMouseKeyboardApp.inf
+INF  TestPkg/Application/TestDevicePathApp/TestDevicePathApp.inf
+INF  TestPkg/Application/TestFileIoApp/TestFileIoApp.inf
+INF  TestPkg/Application/TestPcdApp/TestPcdApp.inf
+INF RuleOverride = ACPI TestPkg/Application/TestAslc/TestAslc.inf
+
 [Rule.Common.SEC]
   FILE SEC = $(NAMED_GUID)  {
     PE32     PE32    Align=Auto     $(INF_OUTPUT)/$(MODULE_NAME).efi
@@ -321,3 +337,7 @@ INF  ShellPkg/Application/Shell/Shell.inf
     VERSION   STRING="$(INF_VERSION)" Optional BUILD_NUM=$(BUILD_NUMBER)
   }
 
+[Rule.Common.USER_DEFINED.ACPI]
+  FILE FREEFORM = $(NAMED_GUID) {
+    RAW ACPI  Optional            |.acpi
+  }
