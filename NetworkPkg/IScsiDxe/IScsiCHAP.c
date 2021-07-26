@@ -289,7 +289,7 @@ IScsiCHAPOnRspReceived (
     }
 
     AuthData->InIdentifier      = (UINT32) Result;
-    AuthData->InChallengeLength = (UINT32) sizeof (AuthData->InChallenge);
+    AuthData->InChallengeLength = ISCSI_CHAP_AUTH_MAX_LEN;
     IScsiHexToBin (
       (UINT8 *) AuthData->InChallenge,
       &AuthData->InChallengeLength,
