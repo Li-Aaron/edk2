@@ -435,7 +435,7 @@ ScanSections32 (
     }
   }
 
-  if (!FoundSection && mOutImageType != FW_ACPI_IMAGE) {
+  if (!FoundSection) {
     Error (NULL, 0, 3000, "Invalid", "Did not find any '.text' section.");
     assert (FALSE);
   }
