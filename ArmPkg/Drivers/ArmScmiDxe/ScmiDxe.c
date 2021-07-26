@@ -4,9 +4,9 @@
 
   SPDX-License-Identifier: BSD-2-Clause-Patent
 
-  @par Specification Reference:
-  - Arm System Control and Management Interface - Platform Design Document
-    (https://developer.arm.com/documentation/den0056/)
+  System Control and Management Interface V1.0
+    http://infocenter.arm.com/help/topic/com.arm.doc.den0056a/
+    DEN0056A_System_Control_and_Management_Interface.pdf
 **/
 
 #include <Base.h>
@@ -86,9 +86,7 @@ ArmScmiDxeEntryPoint (
     return Status;
   }
 
-  // Accept any version between SCMI v1.0 and SCMI v2.0
-  if ((Version < BASE_PROTOCOL_VERSION_V1) ||
-    (Version > BASE_PROTOCOL_VERSION_V2)) {
+  if (Version != BASE_PROTOCOL_VERSION) {
     ASSERT (FALSE);
     return EFI_UNSUPPORTED;
   }
