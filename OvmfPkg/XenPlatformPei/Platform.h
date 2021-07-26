@@ -91,6 +91,11 @@ XenConnect (
   VOID
   );
 
+EFI_STATUS
+InitializeXen (
+  VOID
+  );
+
 BOOLEAN
 XenDetect (
   VOID
