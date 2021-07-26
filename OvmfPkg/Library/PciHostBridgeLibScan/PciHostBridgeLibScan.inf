@@ -39,5 +39,9 @@
   BaseMemoryLib
   DebugLib
   MemoryAllocationLib
+  PcdLib
   PciHostBridgeUtilityLib
   PciLib
+
+[Pcd]
+  gUefiOvmfPkgTokenSpaceGuid.PcdOvmfHostBridgePciDevId
