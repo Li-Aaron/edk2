@@ -32,7 +32,6 @@
 #include <Library/MtrrLib.h>
 #include <Library/HobLib.h>
 #include <Library/PcdLib.h>
-#include <Library/MicrocodeLib.h>
 
 #include <Guid/MicrocodePatchHob.h>
 

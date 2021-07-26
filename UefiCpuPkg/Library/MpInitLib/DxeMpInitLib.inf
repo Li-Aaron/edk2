@@ -52,7 +52,6 @@
   SynchronizationLib
   PcdLib
   VmgExitLib
-  MicrocodeLib
 
 [Protocols]
   gEfiTimerArchProtocolGuid                     ## SOMETIMES_CONSUMES

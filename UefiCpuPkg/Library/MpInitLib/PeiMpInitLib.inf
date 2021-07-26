@@ -51,7 +51,6 @@
   PeiServicesLib
   PcdLib
   VmgExitLib
-  MicrocodeLib
 
 [Pcd]
   gUefiCpuPkgTokenSpaceGuid.PcdCpuMaxLogicalProcessorNumber        ## CONSUMES
