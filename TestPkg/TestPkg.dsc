@@ -13,6 +13,12 @@
   BUILD_TARGETS                  = DEBUG|RELEASE|NOOPT
   SKUID_IDENTIFIER               = DEFAULT
 
+[LibraryClasses]
+  #
+  # Entry point
+  #
+  SerialOutLib|TestPkg/Library/SerialOutLib/SerialOutLib.inf
+
 [Components]
   # TODO: self added
   ShellPkg/Application/ShellHelloApp/ShellHelloApp.inf {

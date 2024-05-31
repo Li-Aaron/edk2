@@ -1,0 +1,27 @@
+##  @file
+#   Library used for sorting method compare.
+#   Self Study usage.
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010006
+  BASE_NAME                      = SerialOutLib
+  FILE_GUID                      = 79f80ca8-ddbe-4230-a465-076a628149eb
+  MODULE_TYPE                    = BASE
+  VERSION_STRING                 = 1.0
+  LIBRARY_CLASS                  = SerialOutLib
+
+#
+#  VALID_ARCHITECTURES           = IA32 X64 EBC
+#
+
+[Sources.common]
+  SerialOutLib.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  TestPkg/TestPkg.dec
+
+[LibraryClasses]
+  BaseLib
+  IoLib
