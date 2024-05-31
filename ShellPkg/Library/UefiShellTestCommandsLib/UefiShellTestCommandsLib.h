@@ -7,7 +7,6 @@
 #define _UEFI_SHELL_NETWORK2_COMMANDS_LIB_H_
 
 #include <Uefi.h>
-#include <ShellBase.h>
 
 #include <Guid/ShellLibHiiGuid.h>
 
