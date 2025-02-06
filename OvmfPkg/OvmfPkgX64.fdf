@@ -269,6 +269,7 @@ INF  OvmfPkg/VirtioBlkDxe/VirtioBlk.inf
 INF  OvmfPkg/VirtioScsiDxe/VirtioScsi.inf
 INF  OvmfPkg/VirtioSerialDxe/VirtioSerial.inf
 INF  OvmfPkg/VirtioKeyboardDxe/VirtioKeyboard.inf
+INF  OvmfPkg/TestAcpiDxe/TestAcpi.inf
 !if $(PVSCSI_ENABLE) == TRUE
 INF  OvmfPkg/PvScsiDxe/PvScsiDxe.inf
 !endif

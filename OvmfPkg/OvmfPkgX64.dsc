@@ -919,6 +919,7 @@
   OvmfPkg/QemuRamfbDxe/QemuRamfbDxe.inf
   OvmfPkg/VirtioGpuDxe/VirtioGpu.inf
   OvmfPkg/VirtHstiDxe/VirtHstiDxe.inf
+  OvmfPkg/TestAcpiDxe/TestAcpi.inf
 
   #
   # ISA Support
